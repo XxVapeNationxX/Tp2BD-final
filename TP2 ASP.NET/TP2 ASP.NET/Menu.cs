@@ -29,7 +29,6 @@ namespace TP2_ASP.NET
 
         private void Menu_Load(object sender, EventArgs e)
         {
-          
             try
             {
                 string Dsource = "(DESCRIPTION="
