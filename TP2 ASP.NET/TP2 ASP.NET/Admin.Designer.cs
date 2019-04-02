@@ -86,8 +86,8 @@
             this.TXT_Question.Name = "TXT_Question";
             this.TXT_Question.Size = new System.Drawing.Size(235, 20);
             this.TXT_Question.TabIndex = 3;
-            this.TXT_Question.TextChanged += new System.EventHandler(this.TXT_Question_TextChanged);
-            this.TXT_Question.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TXT_Question_KeyPress);
+            this.TXT_Question.TextChanged += new System.EventHandler(this.TXT_Question_TextChanged_1);
+            this.TXT_Question.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TXT_Question_KeyPress_1);
             // 
             // Question_LB
             // 
@@ -154,6 +154,8 @@
             this.Reponse1.Name = "Reponse1";
             this.Reponse1.Size = new System.Drawing.Size(235, 20);
             this.Reponse1.TabIndex = 10;
+            this.Reponse1.TextChanged += new System.EventHandler(this.TXT_Question_TextChanged_1);
+            this.Reponse1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TXT_Question_KeyPress_1);
             // 
             // textBox2
             // 
@@ -161,6 +163,8 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(235, 20);
             this.textBox2.TabIndex = 12;
+            this.textBox2.TextChanged += new System.EventHandler(this.TXT_Question_TextChanged_1);
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TXT_Question_KeyPress_1);
             // 
             // Reponse3
             // 
@@ -168,6 +172,8 @@
             this.Reponse3.Name = "Reponse3";
             this.Reponse3.Size = new System.Drawing.Size(235, 20);
             this.Reponse3.TabIndex = 13;
+            this.Reponse3.TextChanged += new System.EventHandler(this.TXT_Question_TextChanged_1);
+            this.Reponse3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TXT_Question_KeyPress_1);
             // 
             // Reponse4
             // 
@@ -175,6 +181,8 @@
             this.Reponse4.Name = "Reponse4";
             this.Reponse4.Size = new System.Drawing.Size(235, 20);
             this.Reponse4.TabIndex = 14;
+            this.Reponse4.TextChanged += new System.EventHandler(this.TXT_Question_TextChanged_1);
+            this.Reponse4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TXT_Question_KeyPress_1);
             // 
             // Reponse2
             // 

@@ -35,30 +35,6 @@ namespace TP2_ASP.NET
             RemplirQuestion();
         }
 
-        private void TXT_Question_TextChanged(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(TXT_Question.Text) && CB_Catégoire.GetItemText(CB_Catégoire.SelectedIndex) != "-1")
-            {
-                BTN_Ajouter.Enabled = true;
-            }
-            else
-            {
-                BTN_Ajouter.Enabled = false;
-            }
-        }
-
-        private void TXT_Question_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(TXT_Question.Text) && CB_Catégoire.GetItemText(CB_Catégoire.SelectedIndex) != "-1")
-            {
-                BTN_Ajouter.Enabled = true;
-            }
-            else
-            {
-                BTN_Ajouter.Enabled = false;
-            }
-        }
-
         private void Question_LB_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (Question_LB.SelectedIndex == -1)
@@ -165,17 +141,42 @@ namespace TP2_ASP.NET
         {
             try
             {
-                string sqlSelect = "Select NumReponses from questions where description = '" + CB_Catégoire.GetItemText(CB_Catégoire.SelectedItem) + "'";
+                char yes1 = 'N';
+                char yes2 = 'N';
+                char yes3 = 'N';
+                char yes4 = 'N';
+                string sqlSelect = "Select CodeCategorie from Catégorie where NomCategorie = '" + CB_Catégoire.GetItemText(CB_Catégoire.SelectedItem) + "'";
                 OracleCommand Requete = new OracleCommand(sqlSelect, Conn);
                 OracleDataReader reader = Requete.ExecuteReader();
-                string question = "";
+                string catego = "";
                 while (reader.Read())
                 {
-                    question = reader.GetString(0);
+                    catego = reader.GetString(0);
                 }
-                string sqlDelete = "Delete from reponses where NumReponses= '" + question + "'";
-                OracleCommand Requete2 = new OracleCommand(sqlDelete, Conn);
-                Requete2.ExecuteNonQuery();
+                string SQLInsert = "insert into questions (Numquestion,EnonceQuestion,Flag,CodeCategorie)" +
+                " values " + "('1','" + TXT_Question.Text + "','N', '" + catego + "')";
+                OracleCommand Insert = new OracleCommand(SQLInsert, Conn);
+                Insert.ExecuteNonQuery();
+                if(checkBox1.Checked)
+                {
+                    yes1 = 'Y';
+                }
+                if (checkBox2.Checked)
+                {
+                    yes2 = 'Y';
+                }
+                if (checkBox3.Checked)
+                {
+                    yes3 = 'Y';
+                }
+                if (checkBox4.Checked)
+                {
+                    yes4 = 'Y';
+                }
+                string SQLInsert2 = "insert into reponses (Numreponses,Description,EstBonne,Numquestion)" +
+                " values " + "('1','" + Reponse1.Text + "','" + yes1 + "', (select Numquestions from Questions where EnonceQuetion = '" + TXT_Question.Text + "'))";
+                OracleCommand Insert2 = new OracleCommand(SQLInsert2, Conn);
+                Insert2.ExecuteNonQuery();
             }
             catch (Exception sqlConn)
             {
@@ -213,6 +214,34 @@ namespace TP2_ASP.NET
             checkBox2.Checked = false;
             checkBox3.Checked = false;
             checkBox1.Checked = false;
+        }
+
+        private void TXT_Question_TextChanged_1(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(TXT_Question.Text) && CB_Catégoire.GetItemText(CB_Catégoire.SelectedIndex) != "-1"
+                && !string.IsNullOrWhiteSpace(Reponse1.Text) && !string.IsNullOrWhiteSpace(Reponse2.Text) && !string.IsNullOrWhiteSpace(Reponse3.Text)
+                && !string.IsNullOrWhiteSpace(Reponse4.Text))
+            {
+                BTN_Ajouter.Enabled = true;
+            }
+            else
+            {
+                BTN_Ajouter.Enabled = false;
+            }
+        }
+
+        private void TXT_Question_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(TXT_Question.Text) && CB_Catégoire.GetItemText(CB_Catégoire.SelectedIndex) != "-1"
+                && !string.IsNullOrWhiteSpace(Reponse1.Text) && !string.IsNullOrWhiteSpace(Reponse2.Text) && !string.IsNullOrWhiteSpace(Reponse3.Text)
+                && !string.IsNullOrWhiteSpace(Reponse4.Text))
+            {
+                BTN_Ajouter.Enabled = true;
+            }
+            else
+            {
+                BTN_Ajouter.Enabled = false;
+            }
         }
     }
 }
