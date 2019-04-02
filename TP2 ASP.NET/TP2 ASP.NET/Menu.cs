@@ -129,8 +129,8 @@ namespace TP2_ASP.NET
                 string SQLInsert = "insert into Player(Alias,Nom,Prenom)" +
                     " values" + "(:Alias,:Nom,:Prenom)";
                 OracleParameter OraAlias = new OracleParameter(":Alias", OracleDbType.Varchar2, 20);
-                OracleParameter OraNom = new OracleParameter(":Nom", OracleDbType.Char, 3);
-                OracleParameter OraPrenom = new OracleParameter(":Prenom", OracleDbType.Char, 3);
+                OracleParameter OraNom = new OracleParameter(":Nom", OracleDbType.Varchar2, 40);
+                OracleParameter OraPrenom = new OracleParameter(":Prenom", OracleDbType.Varchar2, 40);
                 OraAlias.Value = 1; //Ou nom?
                 OraNom.Value = Joueur1Nom.Text;
                 OraPrenom.Value = Joueur1Prenom.Text;
@@ -148,8 +148,8 @@ namespace TP2_ASP.NET
                 string SQLInsert2 = "insert into Player(Alias,Nom,Prenom)" +
                     " values" + "(:Alias2,:Nom2,:Prenom2)";
                 OracleParameter OraAlias2 = new OracleParameter(":Alias2", OracleDbType.Varchar2, 20);
-                OracleParameter OraNom2 = new OracleParameter(":Nom2", OracleDbType.Char, 3);
-                OracleParameter OraPrenom2 = new OracleParameter(":Prenom2", OracleDbType.Char, 3);
+                OracleParameter OraNom2 = new OracleParameter(":Nom2", OracleDbType.Varchar2, 40);
+                OracleParameter OraPrenom2 = new OracleParameter(":Prenom2", OracleDbType.Varchar2, 40);
                 OraAlias2.Value = 2; //Ou nom?
                 OraNom2.Value = Joueur2Nom.Text;
                 OraPrenom2.Value = Joueur2Prenom.Text;
