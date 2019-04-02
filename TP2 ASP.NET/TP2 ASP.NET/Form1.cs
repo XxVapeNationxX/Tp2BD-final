@@ -118,6 +118,10 @@ namespace TP2_ASP.NET
         private void BTN_Ajouter_Click(object sender, EventArgs e)
         {
             AjouterJoueur form = new AjouterJoueur();
+            form.joueur1 = Joueur1;
+            form.joueur2 = Joueur2;
+            form.joueur3 = Joueur3;
+            form.joueur4 = Joueur4;
             form.Show();
         }
 
