@@ -17,6 +17,8 @@ namespace TP2_ASP.NET
     public partial class Form1 : Form
     {
         public OracleConnection Conn = new OracleConnection();
+        private DataSet DataSetQuestion = new DataSet();
+        private DataSet DataSetReponse = new DataSet();
 
         public User Joueur1;
         public User Joueur2;
@@ -180,6 +182,6 @@ namespace TP2_ASP.NET
                 User3.Text = "";
                 User4.Text = "";
             }
-        }
+        }        
     }
 }
