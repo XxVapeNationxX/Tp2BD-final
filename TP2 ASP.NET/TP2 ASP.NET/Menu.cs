@@ -123,7 +123,53 @@ namespace TP2_ASP.NET
 
         private void AjouterJoueur(User Joueur1, User Joueur2, User Joueur3, User Joueur4)
         {
+            if(Joueur3.Id != - 1 || Joueur4.Id != -1) //3 Joueur
+            {
+                if(Joueur3.Id != -1)
+                {
 
+                }
+                else
+                {
+
+                }
+            }
+            else if (Joueur3.Id != -1 && Joueur4.Id != -1) //4 Joueur
+            {
+
+            }
+            else //2 Joueur
+            {
+
+            }
+            try
+            {
+                string SQLInsert = "insert into Player(Alias,Nom,Prenom)" +
+                    " values" + "(:Alias,:Nom,:Prenom)";
+                OracleParameter OraAlias = new OracleParameter(":Alias", OracleDbType.Varchar2, 20);
+                OracleParameter OraNom = new OracleParameter(":Nom", OracleDbType.Char, 3);
+                OracleParameter OraPrenom = new OracleParameter(":Prenom", OracleDbType.Char, 3);
+
+                OraAlias.Value = 1; //Ou nom?
+                OraNom.Value = Joueur1Nom.Text;
+                OraPrenom.Value = Joueur1Prenom.Text;
+
+                OracleCommand Insert = new OracleCommand(SQLInsert, CurrentConn);
+                Insert.CommandType = CommandType.Text;
+                Insert.Parameters.Add(OraAlias);
+                Insert.Parameters.Add(OraNom);
+                Insert.Parameters.Add(OraPrenom);
+
+                Insert.ExecuteNonQuery();
+                Adapter.Update(monDataSet.Tables["Player"]);
+                monDataSet.AcceptChanges();
+
+                MessageBox.Show("Joueurs ajoutés");
+            }
+            catch (Exception me)
+            {
+                MessageBox.Show(me.Message.ToString());
+            }
         }
     }
 }
