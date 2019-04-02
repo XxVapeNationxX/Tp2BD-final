@@ -140,9 +140,7 @@ namespace TP2_ASP.NET
                     string Nom = "Joueur" + i + "Nom.Text";
                     string Prenom = "Joueur" + i + "Prenom.Text";
                     string SQLInsert = "insert into Player(Alias,Nom,Prenom)" +
-                    " values " + "('" + i.ToString() + "','" + Joueur1Nom.Text + "','" + Joueur1Prenom.Text + "')";
-                    //string SQLInsert = "insert into Player(Alias,Nom,Prenom)" +
-                    //" values " + "(" + i + "," + Nom + "," + Prenom + ")";
+                    " values " + "('" + i.ToString() + "','" + Nom + "','" + Prenom + "')";
                     OracleCommand Insert = new OracleCommand(SQLInsert, CurrentConn);
                     Insert.ExecuteNonQuery();
                     Adapter.Update(monDataSet.Tables["ListeJoueurs"]);
