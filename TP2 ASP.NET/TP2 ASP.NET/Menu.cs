@@ -78,6 +78,7 @@ namespace TP2_ASP.NET
             Jeu.Joueur2 = Joueur2;
             Jeu.Joueur3 = Joueur3;
             Jeu.Joueur4 = Joueur4;
+            AjouterJoueur(Joueur1, Joueur2, Joueur3, Joueur4);
             Jeu.ShowDialog();
         }
 
@@ -118,6 +119,11 @@ namespace TP2_ASP.NET
             {
 
             }
+        }
+
+        private void AjouterJoueur(User Joueur1, User Joueur2, User Joueur3, User Joueur4)
+        {
+
         }
     }
 }
