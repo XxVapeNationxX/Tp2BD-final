@@ -39,10 +39,10 @@
             this.BTN_Annuler = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.Reponse1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Reponse2 = new System.Windows.Forms.TextBox();
             this.Reponse3 = new System.Windows.Forms.TextBox();
             this.Reponse4 = new System.Windows.Forms.TextBox();
-            this.Reponse2 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
@@ -157,14 +157,14 @@
             this.Reponse1.TextChanged += new System.EventHandler(this.TXT_Question_TextChanged_1);
             this.Reponse1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TXT_Question_KeyPress_1);
             // 
-            // textBox2
+            // Reponse2
             // 
-            this.textBox2.Location = new System.Drawing.Point(101, 121);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(235, 20);
-            this.textBox2.TabIndex = 12;
-            this.textBox2.TextChanged += new System.EventHandler(this.TXT_Question_TextChanged_1);
-            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TXT_Question_KeyPress_1);
+            this.Reponse2.Location = new System.Drawing.Point(101, 121);
+            this.Reponse2.Name = "Reponse2";
+            this.Reponse2.Size = new System.Drawing.Size(235, 20);
+            this.Reponse2.TabIndex = 12;
+            this.Reponse2.TextChanged += new System.EventHandler(this.TXT_Question_TextChanged_1);
+            this.Reponse2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TXT_Question_KeyPress_1);
             // 
             // Reponse3
             // 
@@ -184,15 +184,15 @@
             this.Reponse4.TextChanged += new System.EventHandler(this.TXT_Question_TextChanged_1);
             this.Reponse4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TXT_Question_KeyPress_1);
             // 
-            // Reponse2
+            // label11
             // 
-            this.Reponse2.AutoSize = true;
-            this.Reponse2.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Reponse2.Location = new System.Drawing.Point(7, 121);
-            this.Reponse2.Name = "Reponse2";
-            this.Reponse2.Size = new System.Drawing.Size(87, 21);
-            this.Reponse2.TabIndex = 15;
-            this.Reponse2.Text = "Réponse2:";
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(7, 121);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(87, 21);
+            this.label11.TabIndex = 15;
+            this.label11.Text = "Réponse2:";
             // 
             // label6
             // 
@@ -269,10 +269,10 @@
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.Reponse2);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.Reponse4);
             this.Controls.Add(this.Reponse3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.Reponse2);
             this.Controls.Add(this.Reponse1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.BTN_Annuler);
@@ -305,10 +305,10 @@
         private System.Windows.Forms.Button BTN_Annuler;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox Reponse1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Reponse2;
         private System.Windows.Forms.TextBox Reponse3;
         private System.Windows.Forms.TextBox Reponse4;
-        private System.Windows.Forms.Label Reponse2;
+        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox checkBox4;

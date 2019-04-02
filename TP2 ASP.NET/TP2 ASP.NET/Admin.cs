@@ -15,6 +15,10 @@ namespace TP2_ASP.NET
     public partial class Admin : Form
     {
         public OracleConnection Conn = new OracleConnection();
+        private int NombreQuestionB = 21;
+        private int NombreQuestionR = 21;
+        private int NombreQuestionV = 21;
+        private int NombreQuestionJ = 21;
 
         public Admin()
         {
@@ -116,20 +120,23 @@ namespace TP2_ASP.NET
         {
             try
             {
-                string sqlSelect = "Select NumReponses from questions where description = '" + CB_Catégoire.GetItemText(CB_Catégoire.SelectedItem) + "'";
-                OracleCommand Requete = new OracleCommand(sqlSelect, Conn);
-                OracleDataReader reader = Requete.ExecuteReader();
-                string question = "";
-                while (reader.Read())
+                string sqlcatego = "Select CodeCategorie from Catégorie where NomCategorie = '" + CB_Catégoire.GetItemText(CB_Catégoire.SelectedItem) + "'";
+                OracleCommand Requetecatego = new OracleCommand(sqlcatego, Conn);
+                OracleDataReader readercatego = Requetecatego.ExecuteReader();
+                string catego = "";
+                while (readercatego.Read())
                 {
-                    question = reader.GetString(0);
+                    catego = readercatego.GetString(0);
                 }
-                string sqlDelete = "Delete from reponses where NumReponses= '" + question + "'";
+                catego = catego + (Question_LB.SelectedIndex + 1);
+                string sqlDelete = "Delete from reponses where NumQuestion= '" + catego + "'";
                 OracleCommand Requete2 = new OracleCommand(sqlDelete, Conn);
                 Requete2.ExecuteNonQuery();
-                string sqlDelete2 = "Delete from questions where NumReponses= '" + question + "'";
+                string sqlDelete2 = "Delete from questions where NumQuestion= '" + catego + "'";
                 OracleCommand Requete3 = new OracleCommand(sqlDelete2, Conn);
                 Requete3.ExecuteNonQuery();
+                MessageBox.Show("Question supprimé!");
+                RemplirQuestion();
             }
             catch (Exception sqlConn)
             {
@@ -145,19 +152,7 @@ namespace TP2_ASP.NET
                 char yes2 = 'N';
                 char yes3 = 'N';
                 char yes4 = 'N';
-                string sqlSelect = "Select CodeCategorie from Catégorie where NomCategorie = '" + CB_Catégoire.GetItemText(CB_Catégoire.SelectedItem) + "'";
-                OracleCommand Requete = new OracleCommand(sqlSelect, Conn);
-                OracleDataReader reader = Requete.ExecuteReader();
-                string catego = "";
-                while (reader.Read())
-                {
-                    catego = reader.GetString(0);
-                }
-                string SQLInsert = "insert into questions (Numquestion,EnonceQuestion,Flag,CodeCategorie)" +
-                " values " + "('1','" + TXT_Question.Text + "','N', '" + catego + "')";
-                OracleCommand Insert = new OracleCommand(SQLInsert, Conn);
-                Insert.ExecuteNonQuery();
-                if(checkBox1.Checked)
+                if (checkBox1.Checked)
                 {
                     yes1 = 'Y';
                 }
@@ -173,22 +168,74 @@ namespace TP2_ASP.NET
                 {
                     yes4 = 'Y';
                 }
-                string SQLInsert2 = "insert into reponses (Numreponses,Description,EstBonne,Numquestion)" +
-                " values " + "('1','" + Reponse1.Text + "','" + yes1 + "', (select Numquestions from Questions where EnonceQuetion = '" + TXT_Question.Text + "'))";
+                string sqlSelect = "Select CodeCategorie from Catégorie where NomCategorie = '" + CB_Catégoire.GetItemText(CB_Catégoire.SelectedItem) + "'";
+                OracleCommand Requete = new OracleCommand(sqlSelect, Conn);
+                OracleDataReader reader = Requete.ExecuteReader();
+                string catego = "";
+                while (reader.Read())
+                {
+                    catego = reader.GetString(0);
+                }
+                //Numquestion
+                if (catego == "B")
+                {
+                    catego = "B" + NombreQuestionB;
+                    NombreQuestionB++;
+                }
+                if (catego == "V")
+                {
+                    catego = "V" + NombreQuestionV;
+                    NombreQuestionV++;
+                }
+                if (catego == "R")
+                {
+                    catego = "R" + NombreQuestionR;
+                    NombreQuestionR++;
+                }
+                if (catego == "J")
+                {
+                    catego = "J" + NombreQuestionJ;
+                    NombreQuestionJ++;
+                }
+                string SQLInsert = "insert into questions (Numquestion,EnonceQuestion,Flag,CodeCategorie)" +
+                " values " + "('" + catego + "','" + TXT_Question.Text + "','N', (Select CodeCategorie from Catégorie where NomCategorie = '" + CB_Catégoire.GetItemText(CB_Catégoire.SelectedItem) + "'))";
+                OracleCommand Insert = new OracleCommand(SQLInsert, Conn);
+                Insert.ExecuteNonQuery();
+
+                //insertion réponse
+                string Rep1 = catego + "A";
+                string Rep2 = catego + "B";
+                string Rep3 = catego + "C";
+                string Rep4 = catego + "D";
+                string SQLInsert2 = "insert into reponses (Numreponse,Description,EstBonne,Numquestion)" +
+                " values " + "('" + Rep1 + "','" + Reponse1.Text + "','" + yes1 + "','" + catego + "')";
                 OracleCommand Insert2 = new OracleCommand(SQLInsert2, Conn);
                 Insert2.ExecuteNonQuery();
-                string SQLInsert3 = "insert into reponses (Numreponses,Description,EstBonne,Numquestion)" +
-                " values " + "('1','" + Reponse2.Text + "','" + yes2 + "', (select Numquestions from Questions where EnonceQuetion = '" + TXT_Question.Text + "'))";
+                string SQLInsert3 = "insert into reponses (Numreponse,Description,EstBonne,Numquestion)" +
+                " values " + "('" + Rep2 + "','" + Reponse2.Text + "','" + yes2 + "','" + catego + "')";
                 OracleCommand Insert3 = new OracleCommand(SQLInsert3, Conn);
                 Insert3.ExecuteNonQuery();
-                string SQLInsert4 = "insert into reponses (Numreponses,Description,EstBonne,Numquestion)" +
-                " values " + "('1','" + Reponse3.Text + "','" + yes3 + "', (select Numquestions from Questions where EnonceQuetion = '" + TXT_Question.Text + "'))";
+                string SQLInsert4 = "insert into reponses (Numreponse,Description,EstBonne,Numquestion)" +
+                " values " + "('" + Rep3 + "','" + Reponse3.Text + "','" + yes3 + "','" + catego + "')";
                 OracleCommand Insert4 = new OracleCommand(SQLInsert4, Conn);
                 Insert4.ExecuteNonQuery();
-                string SQLInsert5 = "insert into reponses (Numreponses,Description,EstBonne,Numquestion)" +
-                " values " + "('1','" + Reponse4.Text + "','" + yes4 + "', (select Numquestions from Questions where EnonceQuetion = '" + TXT_Question.Text + "'))";
+                string SQLInsert5 = "insert into reponses (Numreponse,Description,EstBonne,Numquestion)" +
+                " values " + "('" + Rep4 + "','" + Reponse4.Text + "','" + yes4 + "','" + catego + "')";
                 OracleCommand Insert5 = new OracleCommand(SQLInsert5, Conn);
                 Insert5.ExecuteNonQuery();
+
+                MessageBox.Show("Question ajoutee!");
+                TXT_Question.Clear();
+                Reponse1.Clear();
+                Reponse2.Clear();
+                Reponse3.Clear();
+                RemplirQuestion();
+                Reponse4.Clear();
+                checkBox1.Checked = false;
+                checkBox2.Checked = false;
+                checkBox3.Checked = false;
+                checkBox4.Checked = false;
+
             }
             catch (Exception sqlConn)
             {
@@ -254,6 +301,8 @@ namespace TP2_ASP.NET
             {
                 BTN_Ajouter.Enabled = false;
             }
+
         }
     }
 }
+
