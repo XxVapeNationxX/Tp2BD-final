@@ -134,3 +134,19 @@ C:\Users\Mathieu\Source\Repos\Tp2BD-final\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 
 C:\Users\Mathieu\Source\Repos\Tp2BD-final\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csproj.CopyComplete
 C:\Users\Mathieu\Source\Repos\Tp2BD-final\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.exe
 C:\Users\Mathieu\Source\Repos\Tp2BD-final\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.pdb
+C:\Users\charl\Source\Repos\Tp2BD-final2\TP2 ASP.NET\TP2 ASP.NET\bin\Debug\TP2 ASP.NET.exe.config
+C:\Users\charl\Source\Repos\Tp2BD-final2\TP2 ASP.NET\TP2 ASP.NET\bin\Debug\TP2 ASP.NET.exe
+C:\Users\charl\Source\Repos\Tp2BD-final2\TP2 ASP.NET\TP2 ASP.NET\bin\Debug\TP2 ASP.NET.pdb
+C:\Users\charl\Source\Repos\Tp2BD-final2\TP2 ASP.NET\TP2 ASP.NET\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\charl\Source\Repos\Tp2BD-final2\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csprojAssemblyReference.cache
+C:\Users\charl\Source\Repos\Tp2BD-final2\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Admin.resources
+C:\Users\charl\Source\Repos\Tp2BD-final2\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.AjouterJoueur.resources
+C:\Users\charl\Source\Repos\Tp2BD-final2\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Form1.resources
+C:\Users\charl\Source\Repos\Tp2BD-final2\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Menu.resources
+C:\Users\charl\Source\Repos\Tp2BD-final2\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Properties.Resources.resources
+C:\Users\charl\Source\Repos\Tp2BD-final2\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.SupprimerJoueur.resources
+C:\Users\charl\Source\Repos\Tp2BD-final2\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csproj.GenerateResource.cache
+C:\Users\charl\Source\Repos\Tp2BD-final2\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csproj.CoreCompileInputs.cache
+C:\Users\charl\Source\Repos\Tp2BD-final2\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csproj.CopyComplete
+C:\Users\charl\Source\Repos\Tp2BD-final2\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.exe
+C:\Users\charl\Source\Repos\Tp2BD-final2\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.pdb

@@ -17,17 +17,17 @@ namespace TP2_ASP.NET
     public partial class Form1 : Form
     {
         public OracleConnection Conn = new OracleConnection();
-        private DataSet DataSetQuestion = new DataSet();
-        private DataSet DataSetReponse = new DataSet();
 
         public User Joueur1;
         public User Joueur2;
         public User Joueur3;
         public User Joueur4;
+
         public Form1()
         {
             InitializeComponent();
         }
+        
         private void Form1_Load(object sender, EventArgs e)
         {
             QuestionChoisie.Text = "";
@@ -37,21 +37,7 @@ namespace TP2_ASP.NET
             Réponse2.Enabled = false;
             Réponse3.Enabled = false;
             Réponse4.Enabled = false;
-            User1.Text = Joueur1.Prenom;
-            User2.Text = Joueur2.Prenom;
-            if(Joueur3.Id != -1)
-            {
-                User3.Text = Joueur3.Prenom;
-                if(Joueur4.Id != -1)
-                {
-                    User4.Text = Joueur4.Prenom;
-                }
-            }
-            else
-            {
-                User3.Text = "";
-                User4.Text = "";
-            }
+            Load_User();
         }
 
         private void FinDeTour()
@@ -120,13 +106,37 @@ namespace TP2_ASP.NET
         private void BTN_Ajouter_Click(object sender, EventArgs e)
         {
             AjouterJoueur form = new AjouterJoueur();
-            form.Show();
+            form.joueur3 = Joueur3;
+            form.joueur4 = Joueur4;
+            DialogResult dlg_result = form.ShowDialog();
+
+            if (dlg_result == DialogResult.OK)
+            {
+                Joueur3 = form.joueur3;
+                Joueur4 = form.joueur4;
+                Load_User();
+            }
+
         }
 
         private void BTN_Supprimer_Click(object sender, EventArgs e)
         {
             SupprimerJoueur form = new SupprimerJoueur();
             form.Show();
+            form.joueur1 = Joueur1;
+            form.joueur2 = Joueur2;
+            form.joueur3 = Joueur3;
+            form.joueur4 = Joueur4;
+            DialogResult dlg_result = form.ShowDialog();
+
+            if (dlg_result == DialogResult.OK)
+            {
+                Joueur1 = form.joueur1;
+                Joueur2 = form.joueur2;
+                Joueur3 = form.joueur3;
+                Joueur4 = form.joueur4;
+                Load_User();
+            }
         }
 
         private void BTN_Question_Click(object sender, EventArgs e)
@@ -153,28 +163,23 @@ namespace TP2_ASP.NET
             }
         }
 
-        private void FillDataSetQuestion()
+        private void Load_User()
         {
-            try
+            User1.Text = Joueur1.Prenom;
+            User2.Text = Joueur2.Prenom;
+            if (Joueur3.Id != -1)
             {
-                OracleDataAdapter Adapter1 = new OracleDataAdapter(sql1, conn);
-                // On vérifie que le DataSet ne contient pas de Data Table de nom "ListeEtudiants"
-                if (DataSetQuestion.Tables.Contains("ListeEtudiants"))
+                User3.Text = Joueur3.Prenom;
+                if (Joueur4.Id != -1)
                 {
-                    DataSetQuestion.Tables["ListeEtudiants"].Clear();
+                    User4.Text = Joueur4.Prenom;
                 }
-                // on rempli le DataSet
-                Adapter1.Fill(monDataSet, "ListeEtudiants");
-                Adapter1.Dispose();
-                //on fait une liaison des données entre le DGV et le DataSet pour ListeEtudiants
-                BindingSource maSource;
-                maSource = new BindingSource(monDataSet, "ListeEtudiants");
-                DGVEtudiants.DataSource = maSource;
             }
-            catch (Exception exsql1)
+            else
             {
-                MessageBox.Show(exsql1.Message.ToString());
-            }
+                User3.Text = "";
+                User4.Text = "";
+            }
         }
     }
 }
