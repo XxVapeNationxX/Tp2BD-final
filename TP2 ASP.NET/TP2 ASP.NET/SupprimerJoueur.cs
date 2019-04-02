@@ -61,6 +61,22 @@ namespace TP2_ASP.NET
                 OracleCommand Requete2 = new OracleCommand(sqlDelete2, Conn);
                 Requete2.ExecuteNonQuery();
                 MessageBox.Show("Joueur supprimé!");
+                if(listBox1.SelectedIndex + 1 == 4)
+                {
+                    joueur4.Id = -1;
+                }
+                else if (listBox1.SelectedIndex + 1 == 3)
+                {
+                    joueur3.Id = -1;
+                }
+                else if (listBox1.SelectedIndex + 1 == 2)
+                {
+                    joueur2.Id = -1;
+                }
+                else if (listBox1.SelectedIndex + 1 == 1)
+                {
+                    joueur1.Id = -1;
+                }
                 Load_Joueur();
             }
             else
