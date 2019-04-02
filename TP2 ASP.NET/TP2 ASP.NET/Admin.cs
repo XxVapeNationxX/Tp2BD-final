@@ -106,12 +106,17 @@ namespace TP2_ASP.NET
                 }
 
                 OracleCommand oraliste = new OracleCommand("TRIVIACROOK", Conn);
-                oraliste.CommandText = "TRIVIACROOK.ChercherQuestion('" + catego + "')";
+                oraliste.CommandText = "TRIVIACROOK.ChercherQuestion";
                 oraliste.CommandType = CommandType.StoredProcedure;
-                OracleParameter OrapameResultat = new OracleParameter("Phrase",
+                OracleParameter OrapamePhrase = new OracleParameter("Phrase",
                 OracleDbType.RefCursor);
-                OrapameResultat.Direction = ParameterDirection.ReturnValue;
-                oraliste.Parameters.Add(OrapameResultat);
+                OrapamePhrase.Direction = ParameterDirection.ReturnValue;
+                oraliste.Parameters.Add(OrapamePhrase);
+                OracleParameter OrapameCatego = new OracleParameter("pCode",
+                OracleDbType.Char);
+                OrapameCatego.Direction = ParameterDirection.Input;
+                OrapameCatego.Value = catego;
+                oraliste.Parameters.Add(OrapameCatego);
                 OracleDataReader Oraread = oraliste.ExecuteReader();
                 while (Oraread.Read())
                 {
