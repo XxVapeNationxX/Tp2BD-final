@@ -1,0 +1,106 @@
+d:\Users\201773523\source\repos\TP2 ASP.NET\TP2 ASP.NET\bin\Debug\TP2 ASP.NET.exe.config
+d:\Users\201773523\source\repos\TP2 ASP.NET\TP2 ASP.NET\bin\Debug\TP2 ASP.NET.exe
+d:\Users\201773523\source\repos\TP2 ASP.NET\TP2 ASP.NET\bin\Debug\TP2 ASP.NET.pdb
+d:\Users\201773523\source\repos\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csprojAssemblyReference.cache
+d:\Users\201773523\source\repos\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Form1.resources
+d:\Users\201773523\source\repos\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Properties.Resources.resources
+d:\Users\201773523\source\repos\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csproj.GenerateResource.cache
+d:\Users\201773523\source\repos\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csproj.CoreCompileInputs.cache
+d:\Users\201773523\source\repos\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.exe
+d:\Users\201773523\source\repos\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.pdb
+C:\Users\charl\OneDrive\Bureau\Système gestion BD\TP2 ASP.NET\TP2 ASP.NET\TP2 ASP.NET\bin\Debug\TP2 ASP.NET.exe.config
+C:\Users\charl\OneDrive\Bureau\Système gestion BD\TP2 ASP.NET\TP2 ASP.NET\TP2 ASP.NET\bin\Debug\TP2 ASP.NET.exe
+C:\Users\charl\OneDrive\Bureau\Système gestion BD\TP2 ASP.NET\TP2 ASP.NET\TP2 ASP.NET\bin\Debug\TP2 ASP.NET.pdb
+C:\Users\charl\OneDrive\Bureau\Système gestion BD\TP2 ASP.NET\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csprojAssemblyReference.cache
+C:\Users\charl\OneDrive\Bureau\Système gestion BD\TP2 ASP.NET\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Form1.resources
+C:\Users\charl\OneDrive\Bureau\Système gestion BD\TP2 ASP.NET\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Properties.Resources.resources
+C:\Users\charl\OneDrive\Bureau\Système gestion BD\TP2 ASP.NET\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csproj.GenerateResource.cache
+C:\Users\charl\OneDrive\Bureau\Système gestion BD\TP2 ASP.NET\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csproj.CoreCompileInputs.cache
+C:\Users\charl\OneDrive\Bureau\Système gestion BD\TP2 ASP.NET\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.exe
+C:\Users\charl\OneDrive\Bureau\Système gestion BD\TP2 ASP.NET\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.pdb
+C:\Users\charl\OneDrive\Bureau\Système gestion BD\TP2 ASP.NET\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Menu.resources
+d:\Users\201773523\Source\Repos\TP2ADO.NET\TP2 ASP.NET\TP2 ASP.NET\TP2 ASP.NET\bin\Debug\TP2 ASP.NET.exe.config
+d:\Users\201773523\Source\Repos\TP2ADO.NET\TP2 ASP.NET\TP2 ASP.NET\TP2 ASP.NET\bin\Debug\TP2 ASP.NET.exe
+d:\Users\201773523\Source\Repos\TP2ADO.NET\TP2 ASP.NET\TP2 ASP.NET\TP2 ASP.NET\bin\Debug\TP2 ASP.NET.pdb
+d:\Users\201773523\Source\Repos\TP2ADO.NET\TP2 ASP.NET\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csprojAssemblyReference.cache
+d:\Users\201773523\Source\Repos\TP2ADO.NET\TP2 ASP.NET\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Form1.resources
+d:\Users\201773523\Source\Repos\TP2ADO.NET\TP2 ASP.NET\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Menu.resources
+d:\Users\201773523\Source\Repos\TP2ADO.NET\TP2 ASP.NET\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Properties.Resources.resources
+d:\Users\201773523\Source\Repos\TP2ADO.NET\TP2 ASP.NET\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csproj.GenerateResource.cache
+d:\Users\201773523\Source\Repos\TP2ADO.NET\TP2 ASP.NET\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csproj.CoreCompileInputs.cache
+d:\Users\201773523\Source\Repos\TP2ADO.NET\TP2 ASP.NET\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.exe
+d:\Users\201773523\Source\Repos\TP2ADO.NET\TP2 ASP.NET\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.pdb
+d:\Users\201773523\Source\Repos\Tp2-BD3\TP2 ASP.NET\TP2 ASP.NET\bin\Debug\TP2 ASP.NET.exe.config
+d:\Users\201773523\Source\Repos\Tp2-BD3\TP2 ASP.NET\TP2 ASP.NET\bin\Debug\TP2 ASP.NET.exe
+d:\Users\201773523\Source\Repos\Tp2-BD3\TP2 ASP.NET\TP2 ASP.NET\bin\Debug\TP2 ASP.NET.pdb
+d:\Users\201773523\Source\Repos\Tp2-BD3\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csprojAssemblyReference.cache
+d:\Users\201773523\Source\Repos\Tp2-BD3\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Admin.resources
+d:\Users\201773523\Source\Repos\Tp2-BD3\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.AjouterJoueur.resources
+d:\Users\201773523\Source\Repos\Tp2-BD3\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Form1.resources
+d:\Users\201773523\Source\Repos\Tp2-BD3\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Menu.resources
+d:\Users\201773523\Source\Repos\Tp2-BD3\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Properties.Resources.resources
+d:\Users\201773523\Source\Repos\Tp2-BD3\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.SupprimerJoueur.resources
+d:\Users\201773523\Source\Repos\Tp2-BD3\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csproj.GenerateResource.cache
+d:\Users\201773523\Source\Repos\Tp2-BD3\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csproj.CoreCompileInputs.cache
+d:\Users\201773523\Source\Repos\Tp2-BD3\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.exe
+d:\Users\201773523\Source\Repos\Tp2-BD3\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.pdb
+C:\Users\charl\Source\Repos\Tp2-BD\TP2 ASP.NET\TP2 ASP.NET\bin\Debug\TP2 ASP.NET.exe.config
+C:\Users\charl\Source\Repos\Tp2-BD\TP2 ASP.NET\TP2 ASP.NET\bin\Debug\TP2 ASP.NET.exe
+C:\Users\charl\Source\Repos\Tp2-BD\TP2 ASP.NET\TP2 ASP.NET\bin\Debug\TP2 ASP.NET.pdb
+C:\Users\charl\Source\Repos\Tp2-BD\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csprojAssemblyReference.cache
+C:\Users\charl\Source\Repos\Tp2-BD\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Admin.resources
+C:\Users\charl\Source\Repos\Tp2-BD\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.AjouterJoueur.resources
+C:\Users\charl\Source\Repos\Tp2-BD\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Form1.resources
+C:\Users\charl\Source\Repos\Tp2-BD\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Menu.resources
+C:\Users\charl\Source\Repos\Tp2-BD\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Properties.Resources.resources
+C:\Users\charl\Source\Repos\Tp2-BD\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.SupprimerJoueur.resources
+C:\Users\charl\Source\Repos\Tp2-BD\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csproj.GenerateResource.cache
+C:\Users\charl\Source\Repos\Tp2-BD\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csproj.CoreCompileInputs.cache
+C:\Users\charl\Source\Repos\Tp2-BD\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.exe
+C:\Users\charl\Source\Repos\Tp2-BD\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.pdb
+C:\Users\charl\Source\Repos\Tp2-BD3\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csprojAssemblyReference.cache
+C:\Users\charl\Source\Repos\Tp2-BD3\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Admin.resources
+C:\Users\charl\Source\Repos\Tp2-BD3\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.AjouterJoueur.resources
+C:\Users\charl\Source\Repos\Tp2-BD3\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Form1.resources
+C:\Users\charl\Source\Repos\Tp2-BD3\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Menu.resources
+C:\Users\charl\Source\Repos\Tp2-BD3\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.SupprimerJoueur.resources
+C:\Users\charl\Source\Repos\Tp2-BD3\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csproj.GenerateResource.cache
+C:\Users\charl\Source\Repos\Tp2-BD3\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.exe
+C:\Users\charl\Source\Repos\Tp2-BD3\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.pdb
+C:\Users\charl\Source\Repos\Tp2-BD3\TP2 ASP.NET\TP2 ASP.NET\bin\Debug\TP2 ASP.NET.exe.config
+C:\Users\charl\Source\Repos\Tp2-BD3\TP2 ASP.NET\TP2 ASP.NET\bin\Debug\TP2 ASP.NET.exe
+C:\Users\charl\Source\Repos\Tp2-BD3\TP2 ASP.NET\TP2 ASP.NET\bin\Debug\TP2 ASP.NET.pdb
+C:\Users\charl\Source\Repos\Tp2-BD3\TP2 ASP.NET\TP2 ASP.NET\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\charl\Source\Repos\Tp2-BD3\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Properties.Resources.resources
+C:\Users\charl\Source\Repos\Tp2-BD3\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csproj.CoreCompileInputs.cache
+C:\Users\charl\Source\Repos\Tp2-BD3\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csproj.CopyComplete
+C:\Users\Mathieu\Source\Repos\Tp2-BD\TP2 ASP.NET\TP2 ASP.NET\bin\Debug\TP2 ASP.NET.exe.config
+C:\Users\Mathieu\Source\Repos\Tp2-BD\TP2 ASP.NET\TP2 ASP.NET\bin\Debug\TP2 ASP.NET.exe
+C:\Users\Mathieu\Source\Repos\Tp2-BD\TP2 ASP.NET\TP2 ASP.NET\bin\Debug\TP2 ASP.NET.pdb
+C:\Users\Mathieu\Source\Repos\Tp2-BD\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csprojAssemblyReference.cache
+C:\Users\Mathieu\Source\Repos\Tp2-BD\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Admin.resources
+C:\Users\Mathieu\Source\Repos\Tp2-BD\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.AjouterJoueur.resources
+C:\Users\Mathieu\Source\Repos\Tp2-BD\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Form1.resources
+C:\Users\Mathieu\Source\Repos\Tp2-BD\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Menu.resources
+C:\Users\Mathieu\Source\Repos\Tp2-BD\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Properties.Resources.resources
+C:\Users\Mathieu\Source\Repos\Tp2-BD\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.SupprimerJoueur.resources
+C:\Users\Mathieu\Source\Repos\Tp2-BD\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csproj.GenerateResource.cache
+C:\Users\Mathieu\Source\Repos\Tp2-BD\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csproj.CoreCompileInputs.cache
+C:\Users\Mathieu\Source\Repos\Tp2-BD\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csproj.CopyComplete
+C:\Users\Mathieu\Source\Repos\Tp2-BD\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.exe
+C:\Users\Mathieu\Source\Repos\Tp2-BD\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.pdb
+C:\Users\Mathieu\Source\Repos\Tp2-BD2\TP2 ASP.NET\TP2 ASP.NET\bin\Debug\TP2 ASP.NET.exe.config
+C:\Users\Mathieu\Source\Repos\Tp2-BD2\TP2 ASP.NET\TP2 ASP.NET\bin\Debug\TP2 ASP.NET.exe
+C:\Users\Mathieu\Source\Repos\Tp2-BD2\TP2 ASP.NET\TP2 ASP.NET\bin\Debug\TP2 ASP.NET.pdb
+C:\Users\Mathieu\Source\Repos\Tp2-BD2\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csprojAssemblyReference.cache
+C:\Users\Mathieu\Source\Repos\Tp2-BD2\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Admin.resources
+C:\Users\Mathieu\Source\Repos\Tp2-BD2\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.AjouterJoueur.resources
+C:\Users\Mathieu\Source\Repos\Tp2-BD2\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Form1.resources
+C:\Users\Mathieu\Source\Repos\Tp2-BD2\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Menu.resources
+C:\Users\Mathieu\Source\Repos\Tp2-BD2\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.Properties.Resources.resources
+C:\Users\Mathieu\Source\Repos\Tp2-BD2\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2_ASP.NET.SupprimerJoueur.resources
+C:\Users\Mathieu\Source\Repos\Tp2-BD2\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csproj.GenerateResource.cache
+C:\Users\Mathieu\Source\Repos\Tp2-BD2\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csproj.CoreCompileInputs.cache
+C:\Users\Mathieu\Source\Repos\Tp2-BD2\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.csproj.CopyComplete
+C:\Users\Mathieu\Source\Repos\Tp2-BD2\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.exe
+C:\Users\Mathieu\Source\Repos\Tp2-BD2\TP2 ASP.NET\TP2 ASP.NET\obj\Debug\TP2 ASP.NET.pdb
