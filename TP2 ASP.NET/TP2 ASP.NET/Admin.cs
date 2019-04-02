@@ -134,5 +134,53 @@ namespace TP2_ASP.NET
         {
             RemplirQuestion();
         }
+
+        private void BTN_Supprimer_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string sqlSelect = "Select NumReponses from questions where description = '" + CB_Catégoire.GetItemText(CB_Catégoire.SelectedItem) + "'";
+                OracleCommand Requete = new OracleCommand(sqlSelect, Conn);
+                OracleDataReader reader = Requete.ExecuteReader();
+                string question = "";
+                while (reader.Read())
+                {
+                    question = reader.GetString(0);
+                }
+                string sqlDelete = "Delete from reponses where NumReponses= '" + question + "'";
+                OracleCommand Requete2 = new OracleCommand(sqlDelete, Conn);
+                Requete2.ExecuteNonQuery();
+                string sqlDelete2 = "Delete from questions where NumReponses= '" + question + "'";
+                OracleCommand Requete3 = new OracleCommand(sqlDelete2, Conn);
+                Requete3.ExecuteNonQuery();
+            }
+            catch (Exception sqlConn)
+            {
+                MessageBox.Show(sqlConn.Message.ToString());
+            }
+        }
+
+        private void BTN_Ajouter_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string sqlSelect = "Select NumReponses from questions where description = '" + CB_Catégoire.GetItemText(CB_Catégoire.SelectedItem) + "'";
+                OracleCommand Requete = new OracleCommand(sqlSelect, Conn);
+                OracleDataReader reader = Requete.ExecuteReader();
+                string question = "";
+                while (reader.Read())
+                {
+                    question = reader.GetString(0);
+                }
+                string sqlDelete = "Delete from reponses where NumReponses= '" + question + "'";
+                OracleCommand Requete2 = new OracleCommand(sqlDelete, Conn);
+                Requete2.ExecuteNonQuery();
+            }
+            catch (Exception sqlConn)
+            {
+                MessageBox.Show(sqlConn.Message.ToString());
+            }
+        }
+
     }
 }
