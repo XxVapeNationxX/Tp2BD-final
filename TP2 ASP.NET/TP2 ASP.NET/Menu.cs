@@ -123,48 +123,62 @@ namespace TP2_ASP.NET
 
         private void AjouterJoueur(User Joueur1, User Joueur2, User Joueur3, User Joueur4)
         {
-            if(Joueur3.Id != - 1 || Joueur4.Id != -1) //3 Joueur
-            {
-                if(Joueur3.Id != -1)
-                {
-
-                }
-                else
-                {
-
-                }
-            }
-            else if (Joueur3.Id != -1 && Joueur4.Id != -1) //4 Joueur
-            {
-
-            }
-            else //2 Joueur
-            {
-
-            }
             try
             {
+                //insert joueur 1
                 string SQLInsert = "insert into Player(Alias,Nom,Prenom)" +
                     " values" + "(:Alias,:Nom,:Prenom)";
                 OracleParameter OraAlias = new OracleParameter(":Alias", OracleDbType.Varchar2, 20);
                 OracleParameter OraNom = new OracleParameter(":Nom", OracleDbType.Char, 3);
                 OracleParameter OraPrenom = new OracleParameter(":Prenom", OracleDbType.Char, 3);
-
                 OraAlias.Value = 1; //Ou nom?
                 OraNom.Value = Joueur1Nom.Text;
                 OraPrenom.Value = Joueur1Prenom.Text;
-
                 OracleCommand Insert = new OracleCommand(SQLInsert, CurrentConn);
                 Insert.CommandType = CommandType.Text;
                 Insert.Parameters.Add(OraAlias);
                 Insert.Parameters.Add(OraNom);
                 Insert.Parameters.Add(OraPrenom);
-
                 Insert.ExecuteNonQuery();
+                Adapter.Update(monDataSet.Tables["Player"]);
+                monDataSet.AcceptChanges();
+                MessageBox.Show("Joueurs ajoutés");
+
+                //insert joueur 2
+                string SQLInsert2 = "insert into Player(Alias,Nom,Prenom)" +
+                    " values" + "(:Alias2,:Nom2,:Prenom2)";
+                OracleParameter OraAlias2 = new OracleParameter(":Alias2", OracleDbType.Varchar2, 20);
+                OracleParameter OraNom2 = new OracleParameter(":Nom2", OracleDbType.Char, 3);
+                OracleParameter OraPrenom2 = new OracleParameter(":Prenom2", OracleDbType.Char, 3);
+                OraAlias2.Value = 2; //Ou nom?
+                OraNom2.Value = Joueur2Nom.Text;
+                OraPrenom2.Value = Joueur2Prenom.Text;
+                OracleCommand Insert2 = new OracleCommand(SQLInsert2, CurrentConn);
+                Insert2.CommandType = CommandType.Text;
+                Insert2.Parameters.Add(OraAlias2);
+                Insert2.Parameters.Add(OraNom2);
+                Insert2.Parameters.Add(OraPrenom2);
+                Insert2.ExecuteNonQuery();
                 Adapter.Update(monDataSet.Tables["Player"]);
                 monDataSet.AcceptChanges();
 
                 MessageBox.Show("Joueurs ajoutés");
+
+                if (Joueur3.Id != -1 || Joueur4.Id != -1) //3 Joueur
+                {
+                    if (Joueur3.Id != -1)
+                    {
+
+                    }
+                    else
+                    {
+
+                    }
+                }
+                else if (Joueur3.Id != -1 && Joueur4.Id != -1) //4 Joueur
+                {
+
+                }
             }
             catch (Exception me)
             {
