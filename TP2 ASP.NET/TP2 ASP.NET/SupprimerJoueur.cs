@@ -65,7 +65,7 @@ namespace TP2_ASP.NET
             }
             else
             {
-                MessageBox.Show("Minimum de 2 joueurs!")
+                MessageBox.Show("Minimum de 2 joueurs!");
             }
         }
 
