@@ -15,8 +15,6 @@ namespace TP2_ASP.NET
     public partial class AjouterJoueur : Form
     {
         public OracleConnection Conn = new OracleConnection();
-        public User joueur1;
-        public User joueur2;
         public User joueur3;
         public User joueur4;
         public AjouterJoueur()
@@ -67,6 +65,7 @@ namespace TP2_ASP.NET
                 OracleCommand Insert = new OracleCommand(SQLInsert, Conn);
                 Insert.ExecuteNonQuery();
                 MessageBox.Show("Joueur Ajouté!");
+                joueur3.Id = 3;
             }
             else if (joueur4.Id == -1)
             {
@@ -75,6 +74,7 @@ namespace TP2_ASP.NET
                 OracleCommand Insert = new OracleCommand(SQLInsert, Conn);
                 Insert.ExecuteNonQuery();
                 MessageBox.Show("Joueur Ajouté!");
+                joueur4.Id = 4;
             }
             else
             {

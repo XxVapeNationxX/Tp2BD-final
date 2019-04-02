@@ -22,10 +22,12 @@ namespace TP2_ASP.NET
         public User Joueur2;
         public User Joueur3;
         public User Joueur4;
+
         public Form1()
         {
             InitializeComponent();
         }
+        
         private void Form1_Load(object sender, EventArgs e)
         {
             QuestionChoisie.Text = "";
@@ -35,21 +37,7 @@ namespace TP2_ASP.NET
             Réponse2.Enabled = false;
             Réponse3.Enabled = false;
             Réponse4.Enabled = false;
-            User1.Text = Joueur1.Prenom;
-            User2.Text = Joueur2.Prenom;
-            if(Joueur3.Id != -1)
-            {
-                User3.Text = Joueur3.Prenom;
-                if(Joueur4.Id != -1)
-                {
-                    User4.Text = Joueur4.Prenom;
-                }
-            }
-            else
-            {
-                User3.Text = "";
-                User4.Text = "";
-            }
+            Load_User();
         }
 
         private void FinDeTour()
@@ -118,11 +106,16 @@ namespace TP2_ASP.NET
         private void BTN_Ajouter_Click(object sender, EventArgs e)
         {
             AjouterJoueur form = new AjouterJoueur();
-            form.joueur1 = Joueur1;
-            form.joueur2 = Joueur2;
             form.joueur3 = Joueur3;
             form.joueur4 = Joueur4;
-            form.Show();
+            DialogResult dlg_result = form.ShowDialog();
+
+            if (dlg_result == DialogResult.OK)
+            {
+                Joueur3 = form.joueur3;
+                Joueur4 = form.joueur4;
+            }
+
         }
 
         private void BTN_Supprimer_Click(object sender, EventArgs e)
@@ -152,6 +145,25 @@ namespace TP2_ASP.NET
             else
             {
                 BTN_Catégorie.Enabled = false;
+            }
+        }
+
+        private void Load_User()
+        {
+            User1.Text = Joueur1.Prenom;
+            User2.Text = Joueur2.Prenom;
+            if (Joueur3.Id != -1)
+            {
+                User3.Text = Joueur3.Prenom;
+                if (Joueur4.Id != -1)
+                {
+                    User4.Text = Joueur4.Prenom;
+                }
+            }
+            else
+            {
+                User3.Text = "";
+                User4.Text = "";
             }
         }
     }
