@@ -177,6 +177,18 @@ namespace TP2_ASP.NET
                 " values " + "('1','" + Reponse1.Text + "','" + yes1 + "', (select Numquestions from Questions where EnonceQuetion = '" + TXT_Question.Text + "'))";
                 OracleCommand Insert2 = new OracleCommand(SQLInsert2, Conn);
                 Insert2.ExecuteNonQuery();
+                string SQLInsert3 = "insert into reponses (Numreponses,Description,EstBonne,Numquestion)" +
+                " values " + "('1','" + Reponse2.Text + "','" + yes2 + "', (select Numquestions from Questions where EnonceQuetion = '" + TXT_Question.Text + "'))";
+                OracleCommand Insert3 = new OracleCommand(SQLInsert3, Conn);
+                Insert3.ExecuteNonQuery();
+                string SQLInsert4 = "insert into reponses (Numreponses,Description,EstBonne,Numquestion)" +
+                " values " + "('1','" + Reponse3.Text + "','" + yes3 + "', (select Numquestions from Questions where EnonceQuetion = '" + TXT_Question.Text + "'))";
+                OracleCommand Insert4 = new OracleCommand(SQLInsert4, Conn);
+                Insert4.ExecuteNonQuery();
+                string SQLInsert5 = "insert into reponses (Numreponses,Description,EstBonne,Numquestion)" +
+                " values " + "('1','" + Reponse4.Text + "','" + yes4 + "', (select Numquestions from Questions where EnonceQuetion = '" + TXT_Question.Text + "'))";
+                OracleCommand Insert5 = new OracleCommand(SQLInsert5, Conn);
+                Insert5.ExecuteNonQuery();
             }
             catch (Exception sqlConn)
             {
