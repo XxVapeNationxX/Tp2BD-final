@@ -15,6 +15,7 @@ namespace TP2_ASP.NET
     public partial class Admin : Form
     {
         public OracleConnection Conn = new OracleConnection();
+
         public Admin()
         {
             InitializeComponent();
@@ -182,5 +183,36 @@ namespace TP2_ASP.NET
             }
         }
 
+        private void checkBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            checkBox1.Checked = true;
+            checkBox2.Checked = false;
+            checkBox3.Checked = false;
+            checkBox4.Checked = false;
+        }
+
+        private void checkBox2_MouseClick(object sender, MouseEventArgs e)
+        {
+            checkBox2.Checked = true;
+            checkBox3.Checked = false;
+            checkBox4.Checked = false;
+            checkBox1.Checked = false;
+        }
+
+        private void checkBox3_MouseClick(object sender, MouseEventArgs e)
+        {
+            checkBox3.Checked = true;
+            checkBox2.Checked = false;
+            checkBox4.Checked = false;
+            checkBox1.Checked = false;
+        }
+
+        private void checkBox4_MouseClick(object sender, MouseEventArgs e)
+        {
+            checkBox4.Checked = true;
+            checkBox2.Checked = false;
+            checkBox3.Checked = false;
+            checkBox1.Checked = false;
+        }
     }
 }
