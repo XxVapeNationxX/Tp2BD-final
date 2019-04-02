@@ -123,6 +123,17 @@ namespace TP2_ASP.NET
 
         private void AjouterJoueur(User Joueur1, User Joueur2, User Joueur3, User Joueur4)
         {
+            //Essayer sa?
+            /*for (int i = 0; i < 4; i++)
+            {
+                string SQLInsert = "INSERT INTO CircuitMonument(NumCircuit,NumeroMonument,OrdreVisite)"
+               + "values" + "((select NumCircuit from Circuit where Nom = '" + TB_NomCircuit + "'),(select NumeroMonument From Monument where Nom = '" + myTab[i] + "'), SEQCIRCUITMONUMENT.nextval)";
+
+                OracleCommand Insert = new OracleCommand(SQLInsert, conn);
+                Insert.ExecuteNonQuery();
+                Adapter.Update(monDataSet.Tables["ListeCircuitMonument"]);
+                monDataSet.AcceptChanges();
+            }*/
             try
             {
                 //insert joueur 1
