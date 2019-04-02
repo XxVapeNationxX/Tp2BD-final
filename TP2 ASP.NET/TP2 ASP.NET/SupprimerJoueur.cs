@@ -16,6 +16,9 @@ namespace TP2_ASP.NET
     public partial class SupprimerJoueur : Form
     {
         public OracleConnection Conn = new OracleConnection();
+        int TotalJoueur = 0;
+        public User joueur1;
+        public User joueur2;
         public User joueur3;
         public User joueur4;
 
@@ -49,22 +52,21 @@ namespace TP2_ASP.NET
 
         private void BTN_Supprimer_Click(object sender, EventArgs e)
         {
-            if (listBox1.SelectedIndex + 1 == 3)
+            if (TotalJoueur > 2)
             {
-                joueur3.Id = -1;
+                string sqlDelete = "Delete from score where Alias = '" + (listBox1.SelectedIndex + 1) + "'";
+                OracleCommand Requete = new OracleCommand(sqlDelete, Conn);
+                Requete.ExecuteNonQuery();
+                string sqlDelete2 = "Delete from Player where Alias= '" + (listBox1.SelectedIndex + 1) + "'";
+                OracleCommand Requete2 = new OracleCommand(sqlDelete2, Conn);
+                Requete2.ExecuteNonQuery();
+                MessageBox.Show("Joueur supprimé!");
+                Load_Joueur();
             }
-            else if (listBox1.SelectedIndex + 1 == 4)
+            else
             {
-                joueur4.Id = -1;
+                MessageBox.Show("Minimum de 2 joueurs!")
             }
-            string sqlDelete = "Delete from score where Alias = '" + (listBox1.SelectedIndex+1) + "'";
-            OracleCommand Requete = new OracleCommand(sqlDelete, Conn);
-            Requete.ExecuteNonQuery();
-            string sqlDelete2 = "Delete from Player where Alias= '" + (listBox1.SelectedIndex + 1) + "'";
-            OracleCommand Requete2 = new OracleCommand(sqlDelete2, Conn);
-            Requete2.ExecuteNonQuery();
-            MessageBox.Show("Joueur supprimé!");
-            Load_Joueur();
         }
 
         private void Load_Joueur()
@@ -77,6 +79,10 @@ namespace TP2_ASP.NET
             {
                 listBox1.Items.Add(Oraread.GetString(0));
                 listBox1.SelectedIndex = 0;
+            }
+            for(int i = 0; i < listBox1.SelectedIndex; i++)
+            {
+                TotalJoueur++;
             }
         }
     }

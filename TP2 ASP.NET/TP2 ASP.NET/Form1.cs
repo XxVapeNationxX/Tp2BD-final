@@ -123,12 +123,16 @@ namespace TP2_ASP.NET
         {
             SupprimerJoueur form = new SupprimerJoueur();
             form.Show();
+            form.joueur1 = Joueur1;
+            form.joueur2 = Joueur2;
             form.joueur3 = Joueur3;
             form.joueur4 = Joueur4;
             DialogResult dlg_result = form.ShowDialog();
 
             if (dlg_result == DialogResult.OK)
             {
+                Joueur1 = form.joueur1;
+                Joueur2 = form.joueur2;
                 Joueur3 = form.joueur3;
                 Joueur4 = form.joueur4;
                 Load_User();
