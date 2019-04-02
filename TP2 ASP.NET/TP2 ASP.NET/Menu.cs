@@ -134,6 +134,7 @@ namespace TP2_ASP.NET
             }
             try
             {
+
                 for (int i = 1; i != NombreJoueur; i++)
                 {
                     string Nom = "Joueur" + i + "Nom.Text";
