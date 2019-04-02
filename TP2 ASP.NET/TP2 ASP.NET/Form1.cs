@@ -114,6 +114,7 @@ namespace TP2_ASP.NET
             {
                 Joueur3 = form.joueur3;
                 Joueur4 = form.joueur4;
+                Load_User();
             }
 
         }
@@ -122,6 +123,16 @@ namespace TP2_ASP.NET
         {
             SupprimerJoueur form = new SupprimerJoueur();
             form.Show();
+            form.joueur3 = Joueur3;
+            form.joueur4 = Joueur4;
+            DialogResult dlg_result = form.ShowDialog();
+
+            if (dlg_result == DialogResult.OK)
+            {
+                Joueur3 = form.joueur3;
+                Joueur4 = form.joueur4;
+                Load_User();
+            }
         }
 
         private void BTN_Question_Click(object sender, EventArgs e)

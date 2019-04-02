@@ -55,15 +55,18 @@
             // 
             // BTN_Supprimer
             // 
+            this.BTN_Supprimer.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BTN_Supprimer.Location = new System.Drawing.Point(149, 178);
             this.BTN_Supprimer.Name = "BTN_Supprimer";
             this.BTN_Supprimer.Size = new System.Drawing.Size(75, 23);
             this.BTN_Supprimer.TabIndex = 2;
             this.BTN_Supprimer.Text = "Supprimer";
             this.BTN_Supprimer.UseVisualStyleBackColor = true;
+            this.BTN_Supprimer.Click += new System.EventHandler(this.BTN_Supprimer_Click);
             // 
             // BTN_Annuler
             // 
+            this.BTN_Annuler.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BTN_Annuler.Location = new System.Drawing.Point(230, 178);
             this.BTN_Annuler.Name = "BTN_Annuler";
             this.BTN_Annuler.Size = new System.Drawing.Size(75, 23);

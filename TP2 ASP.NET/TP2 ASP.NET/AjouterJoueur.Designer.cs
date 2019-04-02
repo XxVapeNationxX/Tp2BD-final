@@ -76,6 +76,7 @@
             // 
             // BTN_Ajouter
             // 
+            this.BTN_Ajouter.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BTN_Ajouter.Location = new System.Drawing.Point(143, 92);
             this.BTN_Ajouter.Name = "BTN_Ajouter";
             this.BTN_Ajouter.Size = new System.Drawing.Size(75, 23);
@@ -86,6 +87,7 @@
             // 
             // BTN_Annuler
             // 
+            this.BTN_Annuler.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BTN_Annuler.Location = new System.Drawing.Point(224, 92);
             this.BTN_Annuler.Name = "BTN_Annuler";
             this.BTN_Annuler.Size = new System.Drawing.Size(75, 23);
