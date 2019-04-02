@@ -17,6 +17,8 @@ namespace TP2_ASP.NET
     public partial class Form1 : Form
     {
         public OracleConnection Conn = new OracleConnection();
+        private DataSet DataSetQuestion = new DataSet();
+        private DataSet DataSetReponse = new DataSet();
 
         public User Joueur1;
         public User Joueur2;
@@ -149,6 +151,30 @@ namespace TP2_ASP.NET
             {
                 BTN_Catégorie.Enabled = false;
             }
+        }
+
+        private void FillDataSetQuestion()
+        {
+            try
+            {
+                OracleDataAdapter Adapter1 = new OracleDataAdapter(sql1, conn);
+                // On vérifie que le DataSet ne contient pas de Data Table de nom "ListeEtudiants"
+                if (DataSetQuestion.Tables.Contains("ListeEtudiants"))
+                {
+                    DataSetQuestion.Tables["ListeEtudiants"].Clear();
+                }
+                // on rempli le DataSet
+                Adapter1.Fill(monDataSet, "ListeEtudiants");
+                Adapter1.Dispose();
+                //on fait une liaison des données entre le DGV et le DataSet pour ListeEtudiants
+                BindingSource maSource;
+                maSource = new BindingSource(monDataSet, "ListeEtudiants");
+                DGVEtudiants.DataSource = maSource;
+            }
+            catch (Exception exsql1)
+            {
+                MessageBox.Show(exsql1.Message.ToString());
+            }
         }
     }
 }
