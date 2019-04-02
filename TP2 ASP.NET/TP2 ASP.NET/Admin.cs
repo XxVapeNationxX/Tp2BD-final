@@ -30,6 +30,7 @@ namespace TP2_ASP.NET
             BTN_Ajouter.Enabled = false;
             BTN_Supprimer.Enabled = false;
             RemplirCatégorie();
+            CB_Catégoire.SelectedIndex = 1;
             RemplirQuestion();
         }
 
@@ -88,7 +89,6 @@ namespace TP2_ASP.NET
             {
                 MessageBox.Show(sqlerror.Message.ToString());
             }
-            CB_Catégoire.SelectedIndex = 1;
         }
 
         private void RemplirQuestion()
@@ -128,6 +128,11 @@ namespace TP2_ASP.NET
             {
                 MessageBox.Show(sqlConn.Message.ToString());
             }
+        }
+
+        private void CB_Catégoire_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RemplirQuestion();
         }
     }
 }

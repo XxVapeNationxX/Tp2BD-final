@@ -56,6 +56,7 @@
             this.CB_Catégoire.Name = "CB_Catégoire";
             this.CB_Catégoire.Size = new System.Drawing.Size(235, 21);
             this.CB_Catégoire.TabIndex = 1;
+            this.CB_Catégoire.SelectedIndexChanged += new System.EventHandler(this.CB_Catégoire_SelectedIndexChanged);
             // 
             // label2
             // 
