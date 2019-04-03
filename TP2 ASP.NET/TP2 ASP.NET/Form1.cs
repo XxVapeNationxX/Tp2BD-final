@@ -193,7 +193,7 @@ namespace TP2_ASP.NET
 
         private void CatégorieChoisi_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Load_Answer();
+        
         }
 
         private void Load_User()
