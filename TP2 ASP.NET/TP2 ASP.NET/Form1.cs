@@ -151,6 +151,7 @@ namespace TP2_ASP.NET
             form.joueur3 = Joueur3;
             form.joueur4 = Joueur4;
             DialogResult dlg_result = form.ShowDialog();
+            form.Conn = Conn;
 
             if (dlg_result == DialogResult.OK)
             {
@@ -170,6 +171,7 @@ namespace TP2_ASP.NET
             form.joueur3 = Joueur3;
             form.joueur4 = Joueur4;
             DialogResult dlg_result = form.ShowDialog();
+            form.Conn = Conn;
 
             if (dlg_result == DialogResult.OK)
             {
@@ -327,13 +329,51 @@ namespace TP2_ASP.NET
 
             Bonne = reader.GetChar(0);
             // ces quoi que ca retourne quand c'est bon?
-            if(Bonne == " ")
+            if(Bonne.ToString() == "Y")
             {
-                if(JoueurEnJeu = 1)
+                if(JoueurEnJeu == 1)
                 {
                     if (Categorie == 'S')
                     {
-                        Sport1.Text = Sport1.Text.ToString()
+                        Sport1.Text = Sport1.Text.ToString() + 1;
+                    }
+                    else if (Categorie == 'A')
+                    {
+                        Art1.Text = Art1.Text.ToString() + 1;
+                    }
+                    else if (Categorie == 'G')
+                    {
+                        Géo1.Text = Géo1.Text.ToString() + 1;
+                    }
+                    else if (Categorie == 'H')
+                    {
+                        Histoire1.Text = Histoire1.Text.ToString() + 1;
+                    }
+                }
+                else if(JoueurEnJeu == 2)
+                {
+                    if (Categorie == 'S')
+                    {
+                        Sport2.Text = Sport2.Text.ToString() + 1;
+                    }
+                    else if (Categorie == 'A')
+                    {
+                        Art2.Text = Art2.Text.ToString() + 1;
+                    }
+                    else if (Categorie == 'G')
+                    {
+                        Géo2.Text = Géo2.Text.ToString() + 1;
+                    }
+                    else if (Categorie == 'H')
+                    {
+
+                    }
+                }
+                else if (JoueurEnJeu == 3)
+                {
+                    if (Categorie == 'S')
+                    {
+                        Sport3.Text = Sport3.Text.ToString() + 1;
                     }
                     else if (Categorie == 'A')
                     {
@@ -348,49 +388,11 @@ namespace TP2_ASP.NET
 
                     }
                 }
-                else if(JoueurEnJeu = 2)
+                else if (JoueurEnJeu == 4)
                 {
                     if (Categorie == 'S')
                     {
-
-                    }
-                    else if (Categorie == 'A')
-                    {
-
-                    }
-                    else if (Categorie == 'G')
-                    {
-
-                    }
-                    else if (Categorie == 'H')
-                    {
-
-                    }
-                }
-                else if (JoueurEnJeu = 3)
-                {
-                    if (Categorie == 'S')
-                    {
-
-                    }
-                    else if (Categorie == 'A')
-                    {
-
-                    }
-                    else if (Categorie == 'G')
-                    {
-
-                    }
-                    else if (Categorie == 'H')
-                    {
-
-                    }
-                }
-                else if (JoueurEnJeu = 4)
-                {
-                    if (Categorie == 'S')
-                    {
-
+                        Sport4.Text = Sport4.Text.ToString() + 1;
                     }
                     else if (Categorie == 'A')
                     {
