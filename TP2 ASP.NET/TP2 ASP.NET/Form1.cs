@@ -65,37 +65,37 @@ namespace TP2_ASP.NET
         {
             if (NbrJoueur == 2)
             {
-                if (Fleche1.Enabled)
+                if (Fleche1.Visible)
                 {
-                    Fleche1.Enabled = false;
-                    Fleche2.Enabled = true;
+                    Fleche1.Visible = false;
+                    Fleche2.Visible = true;
                     JoueurEnJeu = 2;
                 }
                 else
                 {
-                    Fleche1.Enabled = true;
-                    Fleche2.Enabled = false;
+                    Fleche1.Visible = true;
+                    Fleche2.Visible = false;
                     JoueurEnJeu = 1;
                 }
             }
             else if (NbrJoueur == 3)
             {
-                if (Fleche1.Enabled == true)
+                if (Fleche1.Visible)
                 {
-                    Fleche1.Enabled = false;
-                    Fleche2.Enabled = true;
+                    Fleche1.Visible = false;
+                    Fleche2.Visible = true;
                     JoueurEnJeu = 2;
                 }
-                else if (Fleche2.Enabled == true)
+                else if (Fleche2.Visible)
                 {
-                    Fleche2.Enabled = false;
-                    Fleche3.Enabled = true;
+                    Fleche2.Visible = false;
+                    Fleche3.Visible = true;
                     JoueurEnJeu = 3;
                 }
-                else if (Fleche3.Enabled == true)
+                else if (Fleche3.Visible)
                 {
-                    Fleche2.Enabled = false;
-                    Fleche1.Enabled = true;
+                    Fleche2.Visible = false;
+                    Fleche1.Visible = true;
                     JoueurEnJeu = 1;
                 }
             }
@@ -452,7 +452,7 @@ namespace TP2_ASP.NET
                 Réponse2.Enabled = false;
                 Réponse3.Enabled = false;
                 Réponse4.Enabled = false;
-                SiGagné();
+                SiGagné(JoueurEnJeu);
             }
             else //mauvaise réponse
             {
@@ -512,11 +512,35 @@ namespace TP2_ASP.NET
             }
         }
 
-        private void SiGagné()
+        private void SiGagné(int Joueurenjeu)
         {
-            for (int i = 0; i < NbrJoueur; i++)
+            if(Joueurenjeu == 1)
             {
-
+                if(iS > 5 || iG > 5 || iH > 5 || iA > 5)
+                {
+                    MessageBox.Show("Le joueur 1 a gagné!");
+                }
+            }
+            else if (Joueurenjeu == 2)
+            {
+                if (iS2 > 5 || iG2 > 5 || iH2 > 5 || iA2 > 5)
+                {
+                    MessageBox.Show("Le joueur 2 a gagné!");
+                }
+            }
+            else if(Joueurenjeu == 3)
+            {
+                if (iS3 > 5 || iG3 > 5 || iH3 > 5 || iA3 > 5)
+                {
+                    MessageBox.Show("Le joueur 3 a gagné!");
+                }
+            }
+            else if (Joueurenjeu == 4)
+            {
+                if (iS4 > 5 || iG4 > 5 || iH4 > 5 || iA4 > 5)
+                {
+                    MessageBox.Show("Le joueur 4 a gagné!");
+                }
             }
         }
 
