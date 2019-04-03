@@ -64,19 +64,19 @@ namespace TP2_ASP.NET
                 MessageBox.Show("Joueur supprimé!");
                 if(listBox1.SelectedIndex + 1 == 4)
                 {
-                    joueur4.Id = -1;
+                    joueur4.Prenom = null;
                 }
                 else if (listBox1.SelectedIndex + 1 == 3)
                 {
-                    joueur3.Id = -1;
+                    joueur3.Prenom = null;
                 }
                 else if (listBox1.SelectedIndex + 1 == 2)
                 {
-                    joueur2.Id = -1;
+                    joueur2.Prenom = null;
                 }
                 else if (listBox1.SelectedIndex + 1 == 1)
                 {
-                    joueur1.Id = -1;
+                    joueur1.Prenom = null;
                 }
                 Load_Joueur();
             }
@@ -97,7 +97,7 @@ namespace TP2_ASP.NET
                 listBox1.Items.Add(Oraread.GetString(0));
                 listBox1.SelectedIndex = 0;
             }
-            for(int i = 0; i < listBox1.SelectedIndex; i++)
+            for(int i = 0; i < listBox1.Items.Count; i++)
             {
                 TotalJoueur++;
             }

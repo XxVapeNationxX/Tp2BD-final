@@ -194,7 +194,6 @@ namespace TP2_ASP.NET
         {
             SupprimerJoueur form = new SupprimerJoueur();
             form.Conn = Conn;
-            form.Show();
             form.joueur1 = Joueur1;
             form.joueur2 = Joueur2;
             form.joueur3 = Joueur3;
