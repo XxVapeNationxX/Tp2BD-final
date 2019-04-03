@@ -116,7 +116,7 @@ namespace TP2_ASP.NET
         private void ChangerCouleur()
         {
 
-            int Number = random.Next(0, 4);
+            int Number = random.Next(0, 5);
 
             if(Number == 0)
             {
@@ -243,6 +243,7 @@ namespace TP2_ASP.NET
             }
             else if(Categorie == 'S')
             {
+                CatégorieChoisi.Enabled = false;
                 try
                 {
                     CatégorieChoisi.Items.Clear();
@@ -263,6 +264,7 @@ namespace TP2_ASP.NET
             }
             else if (Categorie == 'A')
             {
+                CatégorieChoisi.Enabled = false;
                 try
                 {
                     CatégorieChoisi.Items.Clear();
@@ -283,6 +285,7 @@ namespace TP2_ASP.NET
             }
             else if (Categorie == 'G')
             {
+                CatégorieChoisi.Enabled = false;
                 try
                 {
                     CatégorieChoisi.Items.Clear();
@@ -303,6 +306,7 @@ namespace TP2_ASP.NET
             }
             else if (Categorie == 'H')
             {
+                CatégorieChoisi.Enabled = false;
                 try
                 {
                     CatégorieChoisi.Items.Clear();
@@ -379,15 +383,15 @@ namespace TP2_ASP.NET
                     }
                     else if (Categorie == 'A')
                     {
-
+                        Art3.Text = Art3.Text.ToString() + 1;
                     }
                     else if (Categorie == 'G')
                     {
-
+                        Géo3.Text = Géo3.Text.ToString() + 1;
                     }
                     else if (Categorie == 'H')
                     {
-
+                        Histoire3.Text = Histoire3.Text.ToString() + 1;
                     }
                 }
                 else if (JoueurEnJeu == 4)
@@ -398,17 +402,37 @@ namespace TP2_ASP.NET
                     }
                     else if (Categorie == 'A')
                     {
-
+                        Art4.Text = Art4.Text.ToString() + 1;
                     }
                     else if (Categorie == 'G')
                     {
-
+                        Géo4.Text = Géo4.Text.ToString() + 1;
                     }
                     else if (Categorie == 'H')
                     {
-
+                        Histoire4.Text = Histoire4.Text.ToString() + 1;
                     }
                 }
+                else
+                {
+                    FinDeTour();
+                    Réponse1.Text = "";
+                    Réponse2.Text = "";
+                    Réponse3.Text = "";
+                    Réponse4.Text = "";
+                    Réponse1.Enabled = false;
+                    Réponse2.Enabled = false;
+                    Réponse3.Enabled = false;
+                    Réponse4.Enabled = false;
+                }
+                Réponse1.Text = "";
+                Réponse2.Text = "";
+                Réponse3.Text = "";
+                Réponse4.Text = "";
+                Réponse1.Enabled = false;
+                Réponse2.Enabled = false;
+                Réponse3.Enabled = false;
+                Réponse4.Enabled = false;
             }
         }
     }

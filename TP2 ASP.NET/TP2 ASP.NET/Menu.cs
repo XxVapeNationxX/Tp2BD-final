@@ -55,6 +55,7 @@ namespace TP2_ASP.NET
         private void Start_Click(object sender, EventArgs e)
         {
             Form1 Jeu = new Form1();
+            Jeu.Conn = CurrentConn;
             Joueur1.Prenom = Joueur1Prenom.Text;
             Joueur1.Nom = Joueur1Nom.Text;
             Joueur1.Id = 1;
