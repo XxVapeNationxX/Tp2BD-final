@@ -19,6 +19,7 @@ namespace TP2_ASP.NET
         public OracleConnection Conn = new OracleConnection();
         private DataSet DataSetQuestion = new DataSet();
         private char Categorie;
+        private int JoueurEnJeu = 1;
         private int NbrJoueur = 2;
         static Random random = new Random();
 
@@ -35,7 +36,6 @@ namespace TP2_ASP.NET
         private void Form1_Load(object sender, EventArgs e)
         {
             QuestionChoisie.Text = "";
-            BTN_Catégorie.Enabled = false;
             CatégorieChoisi.Enabled = false;
             Réponse1.Enabled = false;
             Réponse2.Enabled = false;
@@ -52,11 +52,13 @@ namespace TP2_ASP.NET
                 {
                     Fleche1.Enabled = false;
                     Fleche2.Enabled = true;
+                    JoueurEnJeu = 2;
                 }
                 else
                 {
                     Fleche1.Enabled = true;
                     Fleche2.Enabled = false;
+                    JoueurEnJeu = 1;
                 }
             }
             else if(NbrJoueur == 3)
@@ -65,16 +67,19 @@ namespace TP2_ASP.NET
                 {
                     Fleche1.Enabled = false;
                     Fleche2.Enabled = true;
+                    JoueurEnJeu = 2;
                 }
                 else if (Fleche2.Enabled == true)
                 {
                     Fleche2.Enabled = false;
                     Fleche3.Enabled = true;
+                    JoueurEnJeu = 3;
                 }
                 else if (Fleche3.Enabled == true)
                 {
                     Fleche2.Enabled = false;
                     Fleche1.Enabled = true;
+                    JoueurEnJeu = 1;
                 }
             }
             else if(NbrJoueur == 4)
@@ -83,21 +88,25 @@ namespace TP2_ASP.NET
                 {
                     Fleche1.Enabled = false;
                     Fleche2.Enabled = true;
+                    JoueurEnJeu = 2;
                 }
                 else if (Fleche2.Enabled == true)
                 {
                     Fleche2.Enabled = false;
                     Fleche3.Enabled = true;
+                    JoueurEnJeu = 2;
                 }
                 else if (Fleche3.Enabled == true)
                 {
                     Fleche3.Enabled = false;
                     Fleche4.Enabled = true;
+                    JoueurEnJeu = 3;
                 }
                 else if (Fleche4.Enabled == true)
                 {
                     Fleche4.Enabled = false;
                     Fleche1.Enabled = true;
+                    JoueurEnJeu = 1;
                 }
             }
            
@@ -247,7 +256,93 @@ namespace TP2_ASP.NET
         }
         private void ValiderQuestion(String Reponse)
         {
+            char Bonne;
+            string sqlSelect = "Select EstBonne from Reponses where description = " + Reponse;
+            OracleCommand Requete = new OracleCommand(sqlSelect, Conn);
+            OracleDataReader reader = Requete.ExecuteReader();
 
+            Bonne = reader.GetChar(0);
+            // ces quoi que ca retourne quand c'est bon?
+            if(Bonne == " ")
+            {
+                if(JoueurEnJeu = 1)
+                {
+                    if (Categorie == 'S')
+                    {
+
+                    }
+                    else if (Categorie == 'A')
+                    {
+
+                    }
+                    else if (Categorie == 'G')
+                    {
+
+                    }
+                    else if (Categorie == 'H')
+                    {
+
+                    }
+                }
+                else if(JoueurEnJeu = 2)
+                {
+                    if (Categorie == 'S')
+                    {
+
+                    }
+                    else if (Categorie == 'A')
+                    {
+
+                    }
+                    else if (Categorie == 'G')
+                    {
+
+                    }
+                    else if (Categorie == 'H')
+                    {
+
+                    }
+
+                }
+                else if (JoueurEnJeu = 3)
+                {
+                     if (Categorie == 'S')
+                    {
+
+                    }
+                    else if (Categorie == 'A')
+                    {
+
+                    }
+                    else if (Categorie == 'G')
+                    {
+
+                    }
+                    else if (Categorie == 'H')
+                    {
+
+                    }
+                }
+                else if (JoueurEnJeu = 4)
+                {
+                    if (Categorie == 'S')
+                    {
+
+                    }
+                    else if (Categorie == 'A')
+                    {
+
+                    }
+                    else if (Categorie == 'G')
+                    {
+
+                    }
+                    else if (Categorie == 'H')
+                    {
+
+                    }
+                }
+            }
         }
     }
 }
