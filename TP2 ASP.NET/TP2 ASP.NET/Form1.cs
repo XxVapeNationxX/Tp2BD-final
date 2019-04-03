@@ -65,7 +65,7 @@ namespace TP2_ASP.NET
         {
             if (NbrJoueur == 2)
             {
-                if (Fleche1.Enabled == true)
+                if (Fleche1.Enabled)
                 {
                     Fleche1.Enabled = false;
                     Fleche2.Enabled = true;
@@ -426,18 +426,6 @@ namespace TP2_ASP.NET
                         Histoire4.Text = iH3.ToString();
                         iH4++;
                     }
-                }
-                else
-                {
-                    FinDeTour();
-                    Réponse1.Text = "";
-                    Réponse2.Text = "";
-                    Réponse3.Text = "";
-                    Réponse4.Text = "";
-                    Réponse1.Enabled = false;
-                    Réponse2.Enabled = false;
-                    Réponse3.Enabled = false;
-                    Réponse4.Enabled = false;
                 }
                 Réponse1.Text = "";
                 Réponse2.Text = "";
