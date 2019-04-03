@@ -239,19 +239,83 @@ namespace TP2_ASP.NET
             }
             else if(Categorie == 'S')
             {
+                try
+                {
+                    CatégorieChoisi.Items.Clear();
+                    string sqlSelect = "Select description from reponse where ";
+                    OracleCommand Requete = new OracleCommand(sqlSelect, Conn);
+                    OracleDataReader reader = Requete.ExecuteReader();
 
+                    while (reader.Read())
+                    {
+                        CatégorieChoisi.Items.Add(reader.GetString(0));
+                    }
+                    reader.Close();
+                }
+                catch (Exception sqlerror)
+                {
+                    MessageBox.Show(sqlerror.Message.ToString());
+                }
             }
             else if (Categorie == 'A')
             {
+                try
+                {
+                    CatégorieChoisi.Items.Clear();
+                    string sqlSelect = "Select NomCategorie from Catégorie";
+                    OracleCommand Requete = new OracleCommand(sqlSelect, Conn);
+                    OracleDataReader reader = Requete.ExecuteReader();
 
+                    while (reader.Read())
+                    {
+                        CatégorieChoisi.Items.Add(reader.GetString(0));
+                    }
+                    reader.Close();
+                }
+                catch (Exception sqlerror)
+                {
+                    MessageBox.Show(sqlerror.Message.ToString());
+                }
             }
             else if (Categorie == 'G')
             {
+                try
+                {
+                    CatégorieChoisi.Items.Clear();
+                    string sqlSelect = "Select NomCategorie from Catégorie";
+                    OracleCommand Requete = new OracleCommand(sqlSelect, Conn);
+                    OracleDataReader reader = Requete.ExecuteReader();
 
+                    while (reader.Read())
+                    {
+                        CatégorieChoisi.Items.Add(reader.GetString(0));
+                    }
+                    reader.Close();
+                }
+                catch (Exception sqlerror)
+                {
+                    MessageBox.Show(sqlerror.Message.ToString());
+                }
             }
             else if (Categorie == 'H')
             {
+                try
+                {
+                    CatégorieChoisi.Items.Clear();
+                    string sqlSelect = "Select NomCategorie from Catégorie";
+                    OracleCommand Requete = new OracleCommand(sqlSelect, Conn);
+                    OracleDataReader reader = Requete.ExecuteReader();
 
+                    while (reader.Read())
+                    {
+                        CatégorieChoisi.Items.Add(reader.GetString(0));
+                    }
+                    reader.Close();
+                }
+                catch (Exception sqlerror)
+                {
+                    MessageBox.Show(sqlerror.Message.ToString());
+                }
             }
         }
         private void ValiderQuestion(String Reponse)
@@ -269,7 +333,7 @@ namespace TP2_ASP.NET
                 {
                     if (Categorie == 'S')
                     {
-
+                        Sport1.Text = Sport1.Text.ToString()
                     }
                     else if (Categorie == 'A')
                     {
@@ -302,11 +366,10 @@ namespace TP2_ASP.NET
                     {
 
                     }
-
                 }
                 else if (JoueurEnJeu = 3)
                 {
-                     if (Categorie == 'S')
+                    if (Categorie == 'S')
                     {
 
                     }
