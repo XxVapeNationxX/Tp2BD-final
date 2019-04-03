@@ -187,13 +187,13 @@ namespace TP2_ASP.NET
         {
             ChangerCouleur();
 
-
+            ChoixCategorie();
 
         }
 
         private void CatégorieChoisi_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            // GEt la question
         }
 
         private void Load_User()
@@ -238,6 +238,8 @@ namespace TP2_ASP.NET
                 {
                     MessageBox.Show(sqlerror.Message.ToString());
                 }
+
+                CatégorieChoisi.Enabled = true;
             }
             else if(Categorie == 'S')
             {
