@@ -337,22 +337,22 @@ namespace TP2_ASP.NET
             {
                 if(JoueurEnJeu == 1)
                 {
-                    if (Categorie == 'S')
+                    if (Categorie == 'V')
                     {
                         Sport1.Text = iS.ToString();
                         iS++;
                     }
-                    else if (Categorie == 'A')
+                    else if (Categorie == 'R')
                     {
                         Art1.Text = iA.ToString();
                         iA++;
                     }
-                    else if (Categorie == 'G')
+                    else if (Categorie == 'B')
                     {
                         Géo1.Text = iG.ToString();
                         iG++;
                     }
-                    else if (Categorie == 'H')
+                    else if (Categorie == 'J')
                     {
                         Histoire1.Text = iH.ToString();
                         iH++;
@@ -360,22 +360,22 @@ namespace TP2_ASP.NET
                 }
                 else if(JoueurEnJeu == 2)
                 {
-                    if (Categorie == 'S')
+                    if (Categorie == 'V')
                     {
                         Sport2.Text = iS2.ToString();
                         iS2++;
                     }
-                    else if (Categorie == 'A')
+                    else if (Categorie == 'R')
                     {
                         Art2.Text = iA2.ToString();
                         iA2++;
                     }
-                    else if (Categorie == 'G')
+                    else if (Categorie == 'B')
                     {
                         Géo2.Text = iG2.ToString();
                         iG2++;
                     }
-                    else if (Categorie == 'H')
+                    else if (Categorie == 'J')
                     {
                         Histoire2.Text = iH2.ToString();
                         iH2++;
@@ -383,22 +383,22 @@ namespace TP2_ASP.NET
                 }
                 else if (JoueurEnJeu == 3)
                 {
-                    if (Categorie == 'S')
+                    if (Categorie == 'V')
                     {
                         Sport3.Text = iS3.ToString();
                         iS3++;
                     }
-                    else if (Categorie == 'A')
+                    else if (Categorie == 'R')
                     {
                         Art3.Text = iA3.ToString();
                         iA3++;
                     }
-                    else if (Categorie == 'G')
+                    else if (Categorie == 'B')
                     {
                         Géo3.Text = iG3.ToString();
                         iG3++;
                     }
-                    else if (Categorie == 'H')
+                    else if (Categorie == 'J')
                     {
                         Histoire3.Text = iH3.ToString();
                         iH3++;
@@ -406,22 +406,22 @@ namespace TP2_ASP.NET
                 }
                 else if (JoueurEnJeu == 4)
                 {
-                    if (Categorie == 'S')
+                    if (Categorie == 'V')
                     {
                         Sport4.Text = iS4.ToString();
                         iS4++;
                     }
-                    else if (Categorie == 'A')
+                    else if (Categorie == 'R')
                     {
                         Art4.Text = iA4.ToString();
                         iA4++;
                     }
-                    else if (Categorie == 'G')
+                    else if (Categorie == 'B')
                     {
                         Géo4.Text = iG4.ToString();
                         iG4++;
                     }
-                    else if (Categorie == 'H')
+                    else if (Categorie == 'J')
                     {
                         Histoire4.Text = iH3.ToString();
                         iH4++;
@@ -448,6 +448,10 @@ namespace TP2_ASP.NET
                 Réponse3.Enabled = false;
                 Réponse4.Enabled = false;
                 SiGagné();
+            }
+            else //mauvaise réponse
+            {
+                FinDeTour();
             }
         }
 
@@ -513,22 +517,22 @@ namespace TP2_ASP.NET
 
         private void Réponse1_Click(object sender, EventArgs e)
         {
-            ValiderQuestion(Réponse1.Text.ToString());
+            ValiderQuestion(Réponse1.Text);
         }
 
         private void Réponse2_Click(object sender, EventArgs e)
         {
-            ValiderQuestion(Réponse2.Text.ToString());
+            ValiderQuestion(Réponse2.Text);
         }
 
         private void Réponse3_Click(object sender, EventArgs e)
         {
-            ValiderQuestion(Réponse3.Text.ToString());
+            ValiderQuestion(Réponse3.Text);
         }
 
         private void Réponse4_Click(object sender, EventArgs e)
         {
-            ValiderQuestion(Réponse4.Text.ToString());
+            ValiderQuestion(Réponse4.Text);
         }
     }
 }

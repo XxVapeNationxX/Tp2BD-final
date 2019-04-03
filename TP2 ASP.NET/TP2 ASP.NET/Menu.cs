@@ -39,7 +39,6 @@ namespace TP2_ASP.NET
                 + ";User Id= bourgeoc" + ";Password=Bourg123";
                 CurrentConn.ConnectionString = ChaineConnexion;
                 CurrentConn.Open();
-                MessageBox.Show(CurrentConn.State.ToString());
             }
             catch (Exception sqlConn)
             {

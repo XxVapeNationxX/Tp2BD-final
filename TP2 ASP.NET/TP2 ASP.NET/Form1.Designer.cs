@@ -203,7 +203,7 @@
             // QuestionChoisie
             // 
             this.QuestionChoisie.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QuestionChoisie.Location = new System.Drawing.Point(286, 81);
+            this.QuestionChoisie.Location = new System.Drawing.Point(338, 84);
             this.QuestionChoisie.Name = "QuestionChoisie";
             this.QuestionChoisie.Size = new System.Drawing.Size(320, 49);
             this.QuestionChoisie.TabIndex = 12;
@@ -529,7 +529,7 @@
             // CatégorieChoisi
             // 
             this.CatégorieChoisi.FormattingEnabled = true;
-            this.CatégorieChoisi.Location = new System.Drawing.Point(356, 60);
+            this.CatégorieChoisi.Location = new System.Drawing.Point(351, 59);
             this.CatégorieChoisi.Name = "CatégorieChoisi";
             this.CatégorieChoisi.Size = new System.Drawing.Size(178, 21);
             this.CatégorieChoisi.TabIndex = 60;
