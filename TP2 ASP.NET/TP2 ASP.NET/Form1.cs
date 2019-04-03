@@ -126,22 +126,22 @@ namespace TP2_ASP.NET
             else if(Number == 1) //Sport
             {
                 BTN_Couleur.BackColor = Color.Green;
-                Categorie = 'S';
+                Categorie = 'V';
             }
             else if (Number == 2) //art
             {
                 BTN_Couleur.BackColor = Color.Red;
-                Categorie = 'A';
+                Categorie = 'R';
             }
             else if (Number == 3) //géo
             {
                 BTN_Couleur.BackColor = Color.Blue;
-                Categorie = 'G';
+                Categorie = 'B';
             }
             else if (Number == 4) //histoire
             {
                 BTN_Couleur.BackColor = Color.Yellow;
-                Categorie = 'H';
+                Categorie = 'J';
             }
         }
 
@@ -219,26 +219,11 @@ namespace TP2_ASP.NET
         
         private void ChoixCategorie()
         {
-            OracleCommand oraliste = new OracleCommand("TRIVIACROOK", Conn);
-            oraliste.CommandText = "TRIVIACROOK.CHERCHERQUESTIONAleatoire";
-            oraliste.CommandType = CommandType.StoredProcedure;
-            OracleParameter OrapamePhrase = new OracleParameter("Phrase",
-            OracleDbType.RefCursor);
-            OrapamePhrase.Direction = ParameterDirection.ReturnValue;
-            oraliste.Parameters.Add(OrapamePhrase);
-            OracleParameter OrapameCatego = new OracleParameter("pCode",
-            OracleDbType.Char);
-            OrapameCatego.Direction = ParameterDirection.Input;
-            OrapameCatego.Value = Categorie;
-            oraliste.Parameters.Add(OrapameCatego);
-            OracleDataReader Oraread = oraliste.ExecuteReader();
-            while (Oraread.Read())
-            {
-                QuestionChoisie.Text = Oraread.GetString(0);
-            } 
+
 
             if (Categorie == 'C')
             {
+                QuestionChoisie.Text = "";
                 try
                 {
                     CatégorieChoisi.Items.Clear();
@@ -259,88 +244,24 @@ namespace TP2_ASP.NET
 
                 CatégorieChoisi.Enabled = true;
             }
-            else if(Categorie == 'S')
+            else
             {
-                CatégorieChoisi.Enabled = false;
-                try
+                OracleCommand oraliste = new OracleCommand("TRIVIACROOK", Conn);
+                oraliste.CommandText = "TRIVIACROOK.CHERCHERQUESTIONAleatoire";
+                oraliste.CommandType = CommandType.StoredProcedure;
+                OracleParameter OrapamePhrase = new OracleParameter("Phrase",
+                OracleDbType.RefCursor);
+                OrapamePhrase.Direction = ParameterDirection.ReturnValue;
+                oraliste.Parameters.Add(OrapamePhrase);
+                OracleParameter OrapameCatego = new OracleParameter("pCode",
+                OracleDbType.Char);
+                OrapameCatego.Direction = ParameterDirection.Input;
+                OrapameCatego.Value = Categorie;
+                oraliste.Parameters.Add(OrapameCatego);
+                OracleDataReader Oraread = oraliste.ExecuteReader();
+                while (Oraread.Read())
                 {
-                    CatégorieChoisi.Items.Clear();
-                    string sqlSelect = "Select description from reponse where ";
-                    OracleCommand Requete = new OracleCommand(sqlSelect, Conn);
-                    OracleDataReader reader = Requete.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        CatégorieChoisi.Items.Add(reader.GetString(0));
-                    }
-                    reader.Close();
-                }
-                catch (Exception sqlerror)
-                {
-                    MessageBox.Show(sqlerror.Message.ToString());
-                }
-            }
-            else if (Categorie == 'A')
-            {
-                CatégorieChoisi.Enabled = false;
-                try
-                {
-                    CatégorieChoisi.Items.Clear();
-                    string sqlSelect = "Select NomCategorie from Catégorie";
-                    OracleCommand Requete = new OracleCommand(sqlSelect, Conn);
-                    OracleDataReader reader = Requete.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        CatégorieChoisi.Items.Add(reader.GetString(0));
-                    }
-                    reader.Close();
-                }
-                catch (Exception sqlerror)
-                {
-                    MessageBox.Show(sqlerror.Message.ToString());
-                }
-            }
-            else if (Categorie == 'G')
-            {
-                CatégorieChoisi.Enabled = false;
-                try
-                {
-                    CatégorieChoisi.Items.Clear();
-                    string sqlSelect = "Select NomCategorie from Catégorie";
-                    OracleCommand Requete = new OracleCommand(sqlSelect, Conn);
-                    OracleDataReader reader = Requete.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        CatégorieChoisi.Items.Add(reader.GetString(0));
-                    }
-                    reader.Close();
-                }
-                catch (Exception sqlerror)
-                {
-                    MessageBox.Show(sqlerror.Message.ToString());
-                }
-            }
-            else if (Categorie == 'H')
-            {
-                CatégorieChoisi.Enabled = false;
-                try
-                {
-                    CatégorieChoisi.Items.Clear();
-                    string sqlSelect = "Select NomCategorie from Catégorie";
-                    OracleCommand Requete = new OracleCommand(sqlSelect, Conn);
-                    OracleDataReader reader = Requete.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        CatégorieChoisi.Items.Add(reader.GetString(0));
-                    }
-                    reader.Close();
-                }
-                catch (Exception sqlerror)
-                {
-                    MessageBox.Show(sqlerror.Message.ToString());
+                    QuestionChoisie.Text = Oraread.GetString(0);
                 }
             }
         }
