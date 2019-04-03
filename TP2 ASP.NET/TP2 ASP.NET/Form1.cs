@@ -32,7 +32,7 @@ namespace TP2_ASP.NET
         {
             InitializeComponent();
         }
-        
+
         private void Form1_Load(object sender, EventArgs e)
         {
             QuestionChoisie.Text = "";
@@ -46,7 +46,7 @@ namespace TP2_ASP.NET
 
         private void FinDeTour()
         {
-            if(NbrJoueur == 2)
+            if (NbrJoueur == 2)
             {
                 if (Fleche1.Enabled == true)
                 {
@@ -61,7 +61,7 @@ namespace TP2_ASP.NET
                     JoueurEnJeu = 1;
                 }
             }
-            else if(NbrJoueur == 3)
+            else if (NbrJoueur == 3)
             {
                 if (Fleche1.Enabled == true)
                 {
@@ -82,7 +82,7 @@ namespace TP2_ASP.NET
                     JoueurEnJeu = 1;
                 }
             }
-            else if(NbrJoueur == 4)
+            else if (NbrJoueur == 4)
             {
                 if (Fleche1.Enabled == true)
                 {
@@ -109,7 +109,7 @@ namespace TP2_ASP.NET
                     JoueurEnJeu = 1;
                 }
             }
-           
+
             BTN_Question.Enabled = true;
         }
 
@@ -118,12 +118,12 @@ namespace TP2_ASP.NET
 
             int Number = random.Next(0, 5);
 
-            if(Number == 0)
+            if (Number == 0)
             {
                 BTN_Couleur.BackColor = Color.White;
                 Categorie = 'C';
             }
-            else if(Number == 1) //Sport
+            else if (Number == 1) //Sport
             {
                 BTN_Couleur.BackColor = Color.Green;
                 Categorie = 'V';
@@ -152,7 +152,7 @@ namespace TP2_ASP.NET
             form.joueur3 = Joueur3;
             form.joueur4 = Joueur4;
             DialogResult dlg_result = form.ShowDialog();
-           
+
 
             if (dlg_result == DialogResult.OK)
             {
@@ -173,7 +173,7 @@ namespace TP2_ASP.NET
             form.joueur3 = Joueur3;
             form.joueur4 = Joueur4;
             DialogResult dlg_result = form.ShowDialog();
-            
+
 
             if (dlg_result == DialogResult.OK)
             {
@@ -195,7 +195,7 @@ namespace TP2_ASP.NET
 
         private void CatégorieChoisi_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(CatégorieChoisi.Text.ToString() == "Histoire")
+            if (CatégorieChoisi.Text.ToString() == "Histoire")
             {
                 Categorie = 'J';
             }
