@@ -219,7 +219,25 @@ namespace TP2_ASP.NET
         
         private void ChoixCategorie()
         {
-            if(Categorie == 'C')
+            OracleCommand oraliste = new OracleCommand("TRIVIACROOK", Conn);
+            oraliste.CommandText = "TRIVIACROOK.CHERCHERQUESTIONAleatoire";
+            oraliste.CommandType = CommandType.StoredProcedure;
+            OracleParameter OrapamePhrase = new OracleParameter("Phrase",
+            OracleDbType.RefCursor);
+            OrapamePhrase.Direction = ParameterDirection.ReturnValue;
+            oraliste.Parameters.Add(OrapamePhrase);
+            OracleParameter OrapameCatego = new OracleParameter("pCode",
+            OracleDbType.Char);
+            OrapameCatego.Direction = ParameterDirection.Input;
+            OrapameCatego.Value = Categorie;
+            oraliste.Parameters.Add(OrapameCatego);
+            OracleDataReader Oraread = oraliste.ExecuteReader();
+            while (Oraread.Read())
+            {
+                QuestionChoisie.Text = Oraread.GetString(0);
+            } 
+
+            if (Categorie == 'C')
             {
                 try
                 {
