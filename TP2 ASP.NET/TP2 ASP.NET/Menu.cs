@@ -123,6 +123,13 @@ namespace TP2_ASP.NET
 
         private void AjouterJoueur(User Joueur1, User Joueur2, User Joueur3, User Joueur4)
         {
+            string sql1 = "delete from Score";
+            OracleCommand objCommand = new OracleCommand(sql1, CurrentConn);
+            int res = objCommand.ExecuteNonQuery();
+            string sql2 = "delete from Player";
+            OracleCommand objCommand1 = new OracleCommand(sql2, CurrentConn);
+            int res1 = objCommand.ExecuteNonQuery();
+
             int NombreJoueur = 2;
             if (Joueur3.Id != -1 && Joueur4.Id == -1) //3 Joueur
             {
