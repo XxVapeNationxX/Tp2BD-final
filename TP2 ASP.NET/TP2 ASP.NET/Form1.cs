@@ -195,7 +195,43 @@ namespace TP2_ASP.NET
 
         private void CatégorieChoisi_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if(CatégorieChoisi.Text.ToString() == "Histoire")
+            {
+                Categorie = 'J';
+            }
+            else if (CatégorieChoisi.Text.ToString() == "Sport")
+            {
+                Categorie = 'V';
+            }
+            else if (CatégorieChoisi.Text.ToString() == "Géographie")
+            {
+                Categorie = 'B';
+            }
+            else if (CatégorieChoisi.Text.ToString() == "Art et culture")
+            {
+                Categorie = 'R';
+            }
+
+            OracleCommand oraliste = new OracleCommand("TRIVIACROOK", Conn);
+            oraliste.CommandText = "TRIVIACROOK.CHERCHERQUESTIONAleatoire";
+            oraliste.CommandType = CommandType.StoredProcedure;
+            OracleParameter OrapamePhrase = new OracleParameter("Phrase",
+            OracleDbType.RefCursor);
+            OrapamePhrase.Direction = ParameterDirection.ReturnValue;
+            oraliste.Parameters.Add(OrapamePhrase);
+            OracleParameter OrapameCatego = new OracleParameter("pCode",
+            OracleDbType.Char);
+            OrapameCatego.Direction = ParameterDirection.Input;
+            OrapameCatego.Value = Categorie;
+            oraliste.Parameters.Add(OrapameCatego);
+            OracleDataReader Oraread = oraliste.ExecuteReader();
+            while (Oraread.Read())
+            {
+                QuestionChoisie.Text = Oraread.GetString(0);
+            }
             Load_Answer();
+
+            CatégorieChoisi.Enabled = false;
         }
 
         private void Load_User()
@@ -270,13 +306,16 @@ namespace TP2_ASP.NET
         }
         private void ValiderQuestion(String Reponse)
         {
-            char Bonne;
-            string sqlSelect = "Select EstBonne from Reponses where description = " + Reponse;
+            string Bonne = "" ;
+            string sqlSelect = "Select EstBonne from Reponses where description ='" + Reponse + "'";
             OracleCommand Requete = new OracleCommand(sqlSelect, Conn);
             OracleDataReader reader = Requete.ExecuteReader();
+            while (reader.Read())
+            {
+                Bonne = reader.GetString(0);
+            }
 
-            Bonne = reader.GetChar(0);
-            if(Bonne.ToString() == "Y")
+            if(Bonne == "Y")
             {
                 if(JoueurEnJeu == 1)
                 {
@@ -379,6 +418,10 @@ namespace TP2_ASP.NET
 
         private void Load_Answer()
         {
+            Réponse1.Enabled = true;
+            Réponse2.Enabled = true;
+            Réponse3.Enabled = true;
+            Réponse4.Enabled = true;
             string sqlSelect = "Select Numquestion from questions where EnonceQuestion = '" + QuestionChoisie.Text + "'";
             OracleCommand Requete = new OracleCommand(sqlSelect, Conn);
             OracleDataReader reader = Requete.ExecuteReader();
@@ -388,29 +431,61 @@ namespace TP2_ASP.NET
                 Numquestion = reader.GetString(0);
             }
 
-            string Rep1 = Numquestion + "A";
-            string Rep2 = Numquestion + "B";
-            string Rep3 = Numquestion + "C";
-            string Rep4 = Numquestion + "D";
-            string SQLInsert2 = "Select Description from reponses where Numreponses = '" + Rep1 + "'";
+            string Rep1 = Numquestion.Substring(0, 3) + "A";
+            string Rep2 = Numquestion.Substring(0, 3) + "B";
+            string Rep3 = Numquestion.Substring(0, 3) + "C";
+            string Rep4 = Numquestion.Substring(0, 3) + "D";
+            string SQLInsert2 = "Select Description from reponses where Numreponse = '" + Rep1 + "'";
             OracleCommand Insert2 = new OracleCommand(SQLInsert2, Conn);
             OracleDataReader reader2 = Insert2.ExecuteReader();
-            Réponse1.Text = reader2.GetString(0);
+            while (reader2.Read())
+            {
+                Réponse1.Text = reader2.GetString(0);
+            }
             //
-            string SQLInsert3 = "Select Description from reponses where Numreponses = '" + Rep1 + "'";
+            string SQLInsert3 = "Select Description from reponses where Numreponse = '" + Rep2 + "'";
             OracleCommand Insert3 = new OracleCommand(SQLInsert3, Conn);
             OracleDataReader reader3 = Insert3.ExecuteReader();
-            Réponse2.Text = reader3.GetString(0);
+            while (reader3.Read())
+            {
+                Réponse2.Text = reader3.GetString(0);
+            }
             //
-            string SQLInsert4 = "Select Description from reponses where Numreponses = '" + Rep1 + "'";
+            string SQLInsert4 = "Select Description from reponses where Numreponse = '" + Rep3 + "'";
             OracleCommand Insert4 = new OracleCommand(SQLInsert4, Conn);
             OracleDataReader reader4 = Insert4.ExecuteReader();
-            Réponse3.Text = reader4.GetString(0);
+            while (reader4.Read())
+            {
+                Réponse3.Text = reader4.GetString(0);
+            }
             //
-            string SQLInsert5 = "Select Description from reponses where Numreponses = '" + Rep1 + "'";
+            string SQLInsert5 = "Select Description from reponses where Numreponse = '" + Rep4 + "'";
             OracleCommand Insert5 = new OracleCommand(SQLInsert5, Conn);
             OracleDataReader reader5 = Insert5.ExecuteReader();
-            Réponse4.Text = reader5.GetString(0);
+            while (reader5.Read())
+            {
+                Réponse4.Text = reader5.GetString(0);
+            }
+        }
+
+        private void Réponse1_Click(object sender, EventArgs e)
+        {
+            ValiderQuestion(Réponse1.Text.ToString());
+        }
+
+        private void Réponse2_Click(object sender, EventArgs e)
+        {
+            ValiderQuestion(Réponse2.Text.ToString());
+        }
+
+        private void Réponse3_Click(object sender, EventArgs e)
+        {
+            ValiderQuestion(Réponse3.Text.ToString());
+        }
+
+        private void Réponse4_Click(object sender, EventArgs e)
+        {
+            ValiderQuestion(Réponse4.Text.ToString());
         }
     }
 }
