@@ -319,6 +319,23 @@ namespace TP2_ASP.NET
                     QuestionChoisie.Text = Oraread.GetString(0);
                 }
                 Load_Answer();
+
+                if (Categorie == 'V')
+                {
+                    CatégorieChoisi.Text = "Sport";
+                }
+                else if (Categorie == 'B')
+                {
+                    CatégorieChoisi.Text = "Geographie";
+                }
+                else if (Categorie == 'J')
+                {
+                    CatégorieChoisi.Text = "Histoire";
+                }
+                else if (Categorie == 'R')
+                {
+                    CatégorieChoisi.Text = "Art et culture";
+                }
             }
         }
         private void ValiderQuestion(String Reponse)
