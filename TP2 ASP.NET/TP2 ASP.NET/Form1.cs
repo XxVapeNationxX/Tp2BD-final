@@ -148,10 +148,11 @@ namespace TP2_ASP.NET
         private void BTN_Ajouter_Click(object sender, EventArgs e)
         {
             AjouterJoueur form = new AjouterJoueur();
+            form.Conn = Conn;
             form.joueur3 = Joueur3;
             form.joueur4 = Joueur4;
             DialogResult dlg_result = form.ShowDialog();
-            form.Conn = Conn;
+           
 
             if (dlg_result == DialogResult.OK)
             {
@@ -165,13 +166,14 @@ namespace TP2_ASP.NET
         private void BTN_Supprimer_Click(object sender, EventArgs e)
         {
             SupprimerJoueur form = new SupprimerJoueur();
+            form.Conn = Conn;
             form.Show();
             form.joueur1 = Joueur1;
             form.joueur2 = Joueur2;
             form.joueur3 = Joueur3;
             form.joueur4 = Joueur4;
             DialogResult dlg_result = form.ShowDialog();
-            form.Conn = Conn;
+            
 
             if (dlg_result == DialogResult.OK)
             {
@@ -220,7 +222,6 @@ namespace TP2_ASP.NET
         private void ChoixCategorie()
         {
 
-
             if (Categorie == 'C')
             {
                 QuestionChoisie.Text = "";
@@ -243,6 +244,7 @@ namespace TP2_ASP.NET
                 }
 
                 CatégorieChoisi.Enabled = true;
+
             }
             else
             {
