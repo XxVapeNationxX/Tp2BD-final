@@ -17,6 +17,7 @@ namespace TP2_ASP.NET
         public OracleConnection Conn = new OracleConnection();
         public User joueur3;
         public User joueur4;
+        public int Joueurenjeu;
         public AjouterJoueur()
         {
             InitializeComponent();
@@ -65,7 +66,9 @@ namespace TP2_ASP.NET
                 OracleCommand Insert = new OracleCommand(SQLInsert, Conn);
                 Insert.ExecuteNonQuery();
                 MessageBox.Show("Joueur Ajouté!");
+                joueur3.Prenom = TB_Prenom.Text;
                 joueur3.Id = 3;
+                
             }
             else if (joueur4.Id == -1)
             {
@@ -74,6 +77,7 @@ namespace TP2_ASP.NET
                 OracleCommand Insert = new OracleCommand(SQLInsert, Conn);
                 Insert.ExecuteNonQuery();
                 MessageBox.Show("Joueur Ajouté!");
+                joueur4.Prenom = TB_Prenom.Text;
                 joueur4.Id = 4;
             }
             else
@@ -82,6 +86,7 @@ namespace TP2_ASP.NET
             }
             TB_Nom.Clear();
             TB_Prenom.Clear();
+            DialogResult = DialogResult.OK;
         }
     }
 }

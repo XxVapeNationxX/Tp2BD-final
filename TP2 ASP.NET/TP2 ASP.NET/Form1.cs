@@ -94,35 +94,35 @@ namespace TP2_ASP.NET
                 }
                 else if (Fleche3.Visible)
                 {
-                    Fleche2.Visible = false;
+                    Fleche3.Visible = false;
                     Fleche1.Visible = true;
                     JoueurEnJeu = 1;
                 }
             }
             else if (NbrJoueur == 4)
             {
-                if (Fleche1.Enabled == true)
+                if (Fleche1.Visible == true)
                 {
-                    Fleche1.Enabled = false;
-                    Fleche2.Enabled = true;
+                    Fleche1.Visible = false;
+                    Fleche2.Visible = true;
                     JoueurEnJeu = 2;
                 }
-                else if (Fleche2.Enabled == true)
+                else if (Fleche2.Visible == true)
                 {
-                    Fleche2.Enabled = false;
-                    Fleche3.Enabled = true;
-                    JoueurEnJeu = 2;
-                }
-                else if (Fleche3.Enabled == true)
-                {
-                    Fleche3.Enabled = false;
-                    Fleche4.Enabled = true;
+                    Fleche2.Visible = false;
+                    Fleche3.Visible = true;
                     JoueurEnJeu = 3;
                 }
-                else if (Fleche4.Enabled == true)
+                else if (Fleche3.Visible == true)
                 {
-                    Fleche4.Enabled = false;
-                    Fleche1.Enabled = true;
+                    Fleche3.Visible = false;
+                    Fleche4.Visible = true;
+                    JoueurEnJeu = 4;
+                }
+                else if (Fleche4.Visible == true)
+                {
+                    Fleche4.Visible = false;
+                    Fleche1.Visible = true;
                     JoueurEnJeu = 1;
                 }
             }
@@ -177,6 +177,7 @@ namespace TP2_ASP.NET
             form.Conn = Conn;
             form.joueur3 = Joueur3;
             form.joueur4 = Joueur4;
+            form.Joueurenjeu = NbrJoueur;
             DialogResult dlg_result = form.ShowDialog();
 
 
@@ -214,7 +215,6 @@ namespace TP2_ASP.NET
         private void BTN_Question_Click(object sender, EventArgs e)
         {
             ChangerCouleur();
-
             ChoixCategorie();
 
         }
@@ -262,13 +262,14 @@ namespace TP2_ASP.NET
 
         private void Load_User()
         {
+            NbrJoueur = 2;
             User1.Text = Joueur1.Prenom;
             User2.Text = Joueur2.Prenom;
-            if (Joueur3.Id != -1)
+            if (Joueur3.Prenom != null)
             {
                 NbrJoueur++;
                 User3.Text = Joueur3.Prenom;
-                if (Joueur4.Id != -1)
+                if (Joueur4.Prenom != null)
                 {
                     NbrJoueur++;
                     User4.Text = Joueur4.Prenom;
