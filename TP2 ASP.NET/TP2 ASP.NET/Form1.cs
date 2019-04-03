@@ -127,6 +127,15 @@ namespace TP2_ASP.NET
                 }
             }
 
+            MessageBox.Show("Mauvaise réponse!");
+            Réponse1.Text = "";
+            Réponse2.Text = "";
+            Réponse3.Text = "";
+            Réponse4.Text = "";
+            Réponse1.Enabled = false;
+            Réponse2.Enabled = false;
+            Réponse3.Enabled = false;
+            Réponse4.Enabled = false;
             BTN_Question.Enabled = true;
         }
 
@@ -516,30 +525,34 @@ namespace TP2_ASP.NET
         {
             if(Joueurenjeu == 1)
             {
-                if(iS > 5 || iG > 5 || iH > 5 || iA > 5)
+                if(iS > 5 && iG > 5 && iH > 5 && iA > 5)
                 {
                     MessageBox.Show("Le joueur 1 a gagné!");
+                    this.Close();
                 }
             }
             else if (Joueurenjeu == 2)
             {
-                if (iS2 > 5 || iG2 > 5 || iH2 > 5 || iA2 > 5)
+                if (iS2 > 5 && iG2 > 5 && iH2 > 5 && iA2 > 5)
                 {
                     MessageBox.Show("Le joueur 2 a gagné!");
+                    this.Close();
                 }
             }
             else if(Joueurenjeu == 3)
             {
-                if (iS3 > 5 || iG3 > 5 || iH3 > 5 || iA3 > 5)
+                if (iS3 > 5 && iG3 > 5 && iH3 > 5 && iA3 > 5)
                 {
                     MessageBox.Show("Le joueur 3 a gagné!");
+                    this.Close();
                 }
             }
             else if (Joueurenjeu == 4)
             {
-                if (iS4 > 5 || iG4 > 5 || iH4 > 5 || iA4 > 5)
+                if (iS4 > 5 && iG4 > 5 && iH4 > 5 && iA4 > 5)
                 {
                     MessageBox.Show("Le joueur 4 a gagné!");
+                    this.Close();
                 }
             }
         }
