@@ -447,6 +447,7 @@ namespace TP2_ASP.NET
                 Réponse2.Enabled = false;
                 Réponse3.Enabled = false;
                 Réponse4.Enabled = false;
+                SiGagné();
             }
         }
 
@@ -499,6 +500,14 @@ namespace TP2_ASP.NET
             while (reader5.Read())
             {
                 Réponse4.Text = reader5.GetString(0);
+            }
+        }
+
+        private void SiGagné()
+        {
+            for (int i = 0; i < NbrJoueur; i++)
+            {
+
             }
         }
 
