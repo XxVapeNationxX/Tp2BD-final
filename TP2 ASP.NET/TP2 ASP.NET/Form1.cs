@@ -274,7 +274,6 @@ namespace TP2_ASP.NET
             OracleDataReader reader = Requete.ExecuteReader();
 
             Bonne = reader.GetChar(0);
-            // ces quoi que ca retourne quand c'est bon?
             if(Bonne.ToString() == "Y")
             {
                 if(JoueurEnJeu == 1)
