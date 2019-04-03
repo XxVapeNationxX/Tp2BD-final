@@ -28,6 +28,23 @@ namespace TP2_ASP.NET
         public User Joueur3;
         public User Joueur4;
 
+        int iS = 1;
+        int iA = 1;
+        int iG = 1;
+        int iH = 1;
+        int iS2 = 1;
+        int iA2 = 1;
+        int iG2 = 1;
+        int iH2 = 1;
+        int iS3 = 1;
+        int iA3 = 1;
+        int iG3 = 1;
+        int iH3 = 1;
+        int iS4 = 1;
+        int iA4 = 1;
+        int iG4 = 1;
+        int iH4 = 1;
+
         public Form1()
         {
             InitializeComponent();
@@ -314,6 +331,7 @@ namespace TP2_ASP.NET
             {
                 Bonne = reader.GetString(0);
             }
+           
 
             if(Bonne == "Y")
             {
@@ -321,76 +339,92 @@ namespace TP2_ASP.NET
                 {
                     if (Categorie == 'S')
                     {
-                        Sport1.Text = Sport1.Text.ToString() + 1;
+                        Sport1.Text = iS.ToString();
+                        iS++;
                     }
                     else if (Categorie == 'A')
                     {
-                        Art1.Text = Art1.Text.ToString() + 1;
+                        Art1.Text = iA.ToString();
+                        iA++;
                     }
                     else if (Categorie == 'G')
                     {
-                        Géo1.Text = Géo1.Text.ToString() + 1;
+                        Géo1.Text = iG.ToString();
+                        iG++;
                     }
                     else if (Categorie == 'H')
                     {
-                        Histoire1.Text = Histoire1.Text.ToString() + 1;
+                        Histoire1.Text = iH.ToString();
+                        iH++;
                     }
                 }
                 else if(JoueurEnJeu == 2)
                 {
                     if (Categorie == 'S')
                     {
-                        Sport2.Text = Sport2.Text.ToString() + 1;
+                        Sport2.Text = iS2.ToString();
+                        iS2++;
                     }
                     else if (Categorie == 'A')
                     {
-                        Art2.Text = Art2.Text.ToString() + 1;
+                        Art2.Text = iA2.ToString();
+                        iA2++;
                     }
                     else if (Categorie == 'G')
                     {
-                        Géo2.Text = Géo2.Text.ToString() + 1;
+                        Géo2.Text = iG2.ToString();
+                        iG2++;
                     }
                     else if (Categorie == 'H')
                     {
-
+                        Histoire2.Text = iH2.ToString();
+                        iH2++;
                     }
                 }
                 else if (JoueurEnJeu == 3)
                 {
                     if (Categorie == 'S')
                     {
-                        Sport3.Text = Sport3.Text.ToString() + 1;
+                        Sport3.Text = iS3.ToString();
+                        iS3++;
                     }
                     else if (Categorie == 'A')
                     {
-                        Art3.Text = Art3.Text.ToString() + 1;
+                        Art3.Text = iA3.ToString();
+                        iA3++;
                     }
                     else if (Categorie == 'G')
                     {
-                        Géo3.Text = Géo3.Text.ToString() + 1;
+                        Géo3.Text = iG3.ToString();
+                        iG3++;
                     }
                     else if (Categorie == 'H')
                     {
-                        Histoire3.Text = Histoire3.Text.ToString() + 1;
+                        Histoire3.Text = iH3.ToString();
+                        iH3++;
                     }
                 }
                 else if (JoueurEnJeu == 4)
                 {
                     if (Categorie == 'S')
                     {
-                        Sport4.Text = Sport4.Text.ToString() + 1;
+                        Sport4.Text = iS4.ToString();
+                        iS4++;
                     }
                     else if (Categorie == 'A')
                     {
-                        Art4.Text = Art4.Text.ToString() + 1;
+                        Art4.Text = iA4.ToString();
+                        iA4++;
                     }
                     else if (Categorie == 'G')
                     {
-                        Géo4.Text = Géo4.Text.ToString() + 1;
+                        Géo4.Text = iG4.ToString();
+                        iG4++;
                     }
                     else if (Categorie == 'H')
                     {
-                        Histoire4.Text = Histoire4.Text.ToString() + 1;
+                        Histoire4.Text = iH3.ToString();
+                        iH4++;
                     }
                 }
                 else
