@@ -18,7 +18,9 @@ namespace TP2_ASP.NET
     {
         public OracleConnection Conn = new OracleConnection();
         private DataSet DataSetQuestion = new DataSet();
-        private DataSet DataSetReponse = new DataSet();
+        private char Categorie;
+        private int NbrJoueur = 2;
+        static Random random = new Random();
 
         public User Joueur1;
         public User Joueur2;
@@ -44,64 +46,93 @@ namespace TP2_ASP.NET
 
         private void FinDeTour()
         {
-            //Gérer la flèche
-            if (Fleche1.Enabled == true)
+            if(NbrJoueur == 2)
             {
-                Fleche1.Enabled = false;
-                Fleche2.Enabled = true;
-            }
-            else if(Fleche2.Enabled == true)
-            {
-                Fleche2.Enabled = false;
-                Fleche3.Enabled = true;
-            }
-            else if (Fleche3.Enabled == true)
-            {
-                Fleche3.Enabled = false;
-                Fleche4.Enabled = true;
-            }
-            else if (Fleche4.Enabled == true)
-            {
-                Fleche4.Enabled = false;
-                Fleche1.Enabled = true;
-            }
-            BTN_Question.Enabled = true;
-        }
-
-        private void ChangerCouleur(string Couleur)
-        {
-            if(Couleur == "blanc")
-            {
-                BTN_Couleur.BackColor = Color.White;
-                Réponse1.Enabled = false;
-                Réponse2.Enabled = false;
-                Réponse3.Enabled = false;
-                Réponse4.Enabled = false;
-                CatégorieChoisi.Enabled = true;
-                if (CatégorieChoisi.SelectedIndex > -1)
+                if (Fleche1.Enabled == true)
                 {
-                    BTN_Catégorie.Enabled = true;
+                    Fleche1.Enabled = false;
+                    Fleche2.Enabled = true;
                 }
                 else
                 {
-                    BTN_Catégorie.Enabled = false;
+                    Fleche1.Enabled = true;
+                    Fleche2.Enabled = false;
                 }
             }
-            else if(Couleur == "vert") //Sport
+            else if(NbrJoueur == 3)
+            {
+                if (Fleche1.Enabled == true)
+                {
+                    Fleche1.Enabled = false;
+                    Fleche2.Enabled = true;
+                }
+                else if (Fleche2.Enabled == true)
+                {
+                    Fleche2.Enabled = false;
+                    Fleche3.Enabled = true;
+                }
+                else if (Fleche3.Enabled == true)
+                {
+                    Fleche2.Enabled = false;
+                    Fleche1.Enabled = true;
+                }
+            }
+            else if(NbrJoueur == 4)
+            {
+                if (Fleche1.Enabled == true)
+                {
+                    Fleche1.Enabled = false;
+                    Fleche2.Enabled = true;
+                }
+                else if (Fleche2.Enabled == true)
+                {
+                    Fleche2.Enabled = false;
+                    Fleche3.Enabled = true;
+                }
+                else if (Fleche3.Enabled == true)
+                {
+                    Fleche3.Enabled = false;
+                    Fleche4.Enabled = true;
+                }
+                else if (Fleche4.Enabled == true)
+                {
+                    Fleche4.Enabled = false;
+                    Fleche1.Enabled = true;
+                }
+            }
+           
+            BTN_Question.Enabled = true;
+        }
+
+        private void ChangerCouleur()
+        {
+
+            int Number = random.Next(0, 4);
+
+            if(Number == 0)
+            {
+                BTN_Couleur.BackColor = Color.White;
+                Categorie = 'C';
+            }
+            else if(Number == 1) //Sport
             {
                 BTN_Couleur.BackColor = Color.Green;
+                Categorie = 'S';
             }
-            else if (Couleur == "rouge") //art
+            else if (Number == 2) //art
             {
                 BTN_Couleur.BackColor = Color.Red;
+                Categorie = 'A';
             }
-            else if (Couleur == "bleu") //géo
+            else if (Number == 3) //géo
             {
                 BTN_Couleur.BackColor = Color.Blue;
+                Categorie = 'G';
             }
-            else if (Couleur == "jaune") //histoire
+            else if (Number == 4) //histoire
             {
                 BTN_Couleur.BackColor = Color.Yellow;
+                Categorie = 'H';
             }
         }
 
@@ -143,26 +174,15 @@ namespace TP2_ASP.NET
 
         private void BTN_Question_Click(object sender, EventArgs e)
         {
-            BTN_Question.Enabled = false;
-            Réponse1.Enabled = true;
-            Réponse2.Enabled = true;
-            Réponse3.Enabled = true;
-            Réponse4.Enabled = true;
-            //Piger une question
-            string Couleur = "blanc";
-            ChangerCouleur(Couleur);
+            ChangerCouleur();
+
+
+
         }
 
         private void CatégorieChoisi_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CatégorieChoisi.SelectedIndex > -1)
-            {
-                BTN_Catégorie.Enabled = true;
-            }
-            else
-            {
-                BTN_Catégorie.Enabled = false;
-            }
+            
         }
 
         private void Load_User()
@@ -171,9 +191,11 @@ namespace TP2_ASP.NET
             User2.Text = Joueur2.Prenom;
             if (Joueur3.Id != -1)
             {
+                NbrJoueur++;
                 User3.Text = Joueur3.Prenom;
                 if (Joueur4.Id != -1)
                 {
+                    NbrJoueur++;
                     User4.Text = Joueur4.Prenom;
                 }
             }
@@ -182,6 +204,50 @@ namespace TP2_ASP.NET
                 User3.Text = "";
                 User4.Text = "";
             }
-        }        
+        }
+        
+        private void ChoixCategorie()
+        {
+            if(Categorie == 'C')
+            {
+                try
+                {
+                    CatégorieChoisi.Items.Clear();
+                    string sqlSelect = "Select NomCategorie from Catégorie";
+                    OracleCommand Requete = new OracleCommand(sqlSelect, Conn);
+                    OracleDataReader reader = Requete.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        CatégorieChoisi.Items.Add(reader.GetString(0));
+                    }
+                    reader.Close();
+                }
+                catch (Exception sqlerror)
+                {
+                    MessageBox.Show(sqlerror.Message.ToString());
+                }
+            }
+            else if(Categorie == 'S')
+            {
+
+            }
+            else if (Categorie == 'A')
+            {
+
+            }
+            else if (Categorie == 'G')
+            {
+
+            }
+            else if (Categorie == 'H')
+            {
+
+            }
+        }
+        private void ValiderQuestion(String Reponse)
+        {
+
+        }
     }
 }

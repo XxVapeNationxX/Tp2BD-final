@@ -16,6 +16,7 @@ namespace TP2_ASP.NET
     public partial class SupprimerJoueur : Form
     {
         public OracleConnection Conn = new OracleConnection();
+
         int TotalJoueur = 0;
         public User joueur1;
         public User joueur2;
