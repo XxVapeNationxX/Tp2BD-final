@@ -195,7 +195,7 @@ namespace TP2_ASP.NET
 
         private void CatégorieChoisi_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // GEt la question
+            Load_Answer();
         }
 
         private void Load_User()
@@ -265,6 +265,7 @@ namespace TP2_ASP.NET
                 {
                     QuestionChoisie.Text = Oraread.GetString(0);
                 }
+                Load_Answer();
             }
         }
         private void ValiderQuestion(String Reponse)
@@ -275,7 +276,6 @@ namespace TP2_ASP.NET
             OracleDataReader reader = Requete.ExecuteReader();
 
             Bonne = reader.GetChar(0);
-            // ces quoi que ca retourne quand c'est bon?
             if(Bonne.ToString() == "Y")
             {
                 if(JoueurEnJeu == 1)
@@ -375,6 +375,42 @@ namespace TP2_ASP.NET
                 Réponse3.Enabled = false;
                 Réponse4.Enabled = false;
             }
+        }
+
+        private void Load_Answer()
+        {
+            string sqlSelect = "Select Numquestion from questions where EnonceQuestion = '" + QuestionChoisie.Text + "'";
+            OracleCommand Requete = new OracleCommand(sqlSelect, Conn);
+            OracleDataReader reader = Requete.ExecuteReader();
+            string Numquestion = "";
+            while (reader.Read())
+            { 
+                Numquestion = reader.GetString(0);
+            }
+
+            string Rep1 = Numquestion + "A";
+            string Rep2 = Numquestion + "B";
+            string Rep3 = Numquestion + "C";
+            string Rep4 = Numquestion + "D";
+            string SQLInsert2 = "Select Description from reponses where Numreponses = '" + Rep1 + "'";
+            OracleCommand Insert2 = new OracleCommand(SQLInsert2, Conn);
+            OracleDataReader reader2 = Insert2.ExecuteReader();
+            Réponse1.Text = reader2.GetString(0);
+            //
+            string SQLInsert3 = "Select Description from reponses where Numreponses = '" + Rep1 + "'";
+            OracleCommand Insert3 = new OracleCommand(SQLInsert3, Conn);
+            OracleDataReader reader3 = Insert3.ExecuteReader();
+            Réponse2.Text = reader3.GetString(0);
+            //
+            string SQLInsert4 = "Select Description from reponses where Numreponses = '" + Rep1 + "'";
+            OracleCommand Insert4 = new OracleCommand(SQLInsert4, Conn);
+            OracleDataReader reader4 = Insert4.ExecuteReader();
+            Réponse3.Text = reader4.GetString(0);
+            //
+            string SQLInsert5 = "Select Description from reponses where Numreponses = '" + Rep1 + "'";
+            OracleCommand Insert5 = new OracleCommand(SQLInsert5, Conn);
+            OracleDataReader reader5 = Insert5.ExecuteReader();
+            Réponse4.Text = reader5.GetString(0);
         }
     }
 }
